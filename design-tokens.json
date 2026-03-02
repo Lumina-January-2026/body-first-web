@@ -1,0 +1,70 @@
+{
+  "_meta": {
+    "description": "Body First canonical design tokens. Single source of truth for app (React Native) and website (Next.js/Tailwind). Extracted from CLAUDE.md Section 7 of the GLP1-Planning app repo.",
+    "lastUpdated": "2026-03-01",
+    "source": "Lumina-January-2026/GLP1-Planning/CLAUDE.md#section-7"
+  },
+
+  "colors": {
+    "peachGradientStart": "#FFE5D9",
+    "peachGradientEnd": "#FFF5F0",
+    "tealPrimary": "#14B8A6",
+    "tealDark": "#0D9488",
+    "coralAccent": "#F97316",
+    "white": "#FFFFFF",
+    "gray900": "#111827",
+    "gray600": "#4B5563",
+    "gray400": "#9CA3AF",
+    "gray200": "#E5E7EB",
+    "gray100": "#F3F4F6",
+    "red500": "#EF4444",
+    "green500": "#22C55E",
+    "navDark": "#1E1E2D",
+    "sideEffectsBlue": "#1E3A5F"
+  },
+
+  "typography": {
+    "fontFamily": {
+      "ios": "SF Pro",
+      "android": "Roboto",
+      "web": "Inter, system-ui, -apple-system, sans-serif"
+    },
+    "scale": {
+      "screenTitle":  { "weight": 600, "size": 24, "lineHeight": 32 },
+      "sectionHeader": { "weight": 600, "size": 18, "lineHeight": 24 },
+      "fieldLabel":   { "weight": 500, "size": 14, "lineHeight": 20 },
+      "fieldValue":   { "weight": 400, "size": 16, "lineHeight": 24 },
+      "helperText":   { "weight": 400, "size": 13, "lineHeight": 18 },
+      "buttonText":   { "weight": 600, "size": 16, "lineHeight": 24 }
+    }
+  },
+
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 16,
+    "lg": 24,
+    "xl": 32
+  },
+
+  "borderRadius": {
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 20,
+    "full": 9999
+  },
+
+  "shadows": {
+    "card": "0 2px 8px rgba(0, 0, 0, 0.06)",
+    "elevated": "0 4px 16px rgba(0, 0, 0, 0.1)"
+  },
+
+  "brandRules": [
+    "Background is ALWAYS warm peach gradient, never flat white, never dark mode.",
+    "Cards are ALWAYS white with soft shadow.",
+    "Style is warm, premium, approachable. NOT clinical. NOT cold.",
+    "No scary warnings. Permission-giving language throughout.",
+    "Tone: like a supportive friend who happens to have all the data."
+  ]
+}
