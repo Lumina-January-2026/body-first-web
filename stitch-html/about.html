@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Body First - About Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#14b8a5",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#11211f",
+                        "navy": "#1E1E2D",
+                        "peach-light": "#FFF5F0",
+                        "peach-dark": "#FFE5D9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-white/10 bg-navy px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-3xl">health_and_safety</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Body First</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8 hidden md:flex">
+<nav class="flex items-center gap-9">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Home</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">About</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Resources</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Community</a>
+</nav>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Get the App</span>
+</button>
+</div>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Mission Hero -->
+<section class="bg-gradient-to-b from-peach-dark to-peach-light dark:from-background-dark dark:to-background-dark py-16 md:py-24 px-4 sm:px-10">
+<div class="layout-content-container max-w-[1200px] mx-auto">
+<div class="@container">
+<div class="flex flex-col gap-10 px-4 md:px-0 @[864px]:flex-row items-center">
+<div class="flex flex-col gap-6 flex-1 text-center @[864px]:text-left">
+<h1 class="text-navy dark:text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-[-0.033em]">
+                                About Body First
+                            </h1>
+<h2 class="text-slate-700 dark:text-slate-300 text-lg md:text-xl font-normal leading-relaxed max-w-[600px] mx-auto @[864px]:mx-0">
+                                Clear, supportive information for your GLP-1 medication journey. We empower you with the knowledge needed to make informed decisions about your health.
+                            </h2>
+<div class="pt-4 flex justify-center @[864px]:justify-start gap-4">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-0.5 transition-all">
+<span class="truncate">Learn More</span>
+</button>
+</div>
+</div>
+<div class="w-full flex-1">
+<div class="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-2xl relative bg-slate-200">
+<img alt="Diverse group of happy people in wellness setting" class="w-full h-full object-cover" data-alt="Group of diverse people smiling together" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhAOj01NrVkD3AE1v1sx_rmfNFTnhH97cBEySZIObjbXdJzmNQJG7vqJ9FLr7qQoIooPc2-1X0BN97Dp9CtFndLjVqKICo7L8GmIWKFDSm8KAjIXbWAx0SrwZ8Hdu4g2eLd7puIY_5thNmXkH-gQzOkQhX8K47IPKQy5BSj9YkTrUL4ZJNdS-Vg5IJI9G5RYKkHsROjudDTOeO7WLJvUSQjvMDW-iL7Nf8fFD9HtGJGca-FZ2Dm2gVrjROcEJif2cbaL9lFhpi0sMB"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent mix-blend-overlay"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Mission Text -->
+<section class="bg-white dark:bg-background-dark py-20 px-4">
+<div class="max-w-[800px] mx-auto text-center flex flex-col gap-8">
+<span class="text-primary font-bold tracking-widest uppercase text-sm">Our Purpose</span>
+<h2 class="text-navy dark:text-white text-3xl md:text-4xl font-bold leading-tight tracking-[-0.015em]">
+                    Empowering Your Health Journey
+                </h2>
+<div class="space-y-6 text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+<p>
+                        We believe everyone deserves access to clear, evidence-based information about GLP-1 medications without the jargon or judgment. The healthcare landscape can be confusing, especially when navigating new treatments.
+                    </p>
+<p>
+                        Our goal is to empower individuals to take control of their wellness journey through education and community support. We bridge the gap between complex medical data and your daily life, making health literacy accessible to all.
+                    </p>
+<p>
+                        Whether you are just starting to research options or have been on a treatment plan for months, Body First is here to provide the clarity and confidence you need to succeed.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="bg-peach-light dark:bg-slate-900 py-20 px-4 sm:px-10">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-4 mb-12 text-center">
+<h2 class="text-navy dark:text-white tracking-tight text-3xl md:text-4xl font-bold leading-tight">
+                        Our Core Values
+                    </h2>
+<p class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal">
+                        Built on a foundation of trust, transparency, and unwavering support.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<!-- Value Card 1 -->
+<div class="flex gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-8 flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-navy dark:text-white text-xl font-bold leading-tight">Evidence-Based</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                All our resources are meticulously reviewed by medical professionals to ensure accuracy and relevance to your needs.
+                            </p>
+</div>
+</div>
+<!-- Value Card 2 -->
+<div class="flex gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-8 flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">favorite</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-navy dark:text-white text-xl font-bold leading-tight">No Judgment Zone</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                We foster a safe, inclusive space where you can learn, share, and grow without fear of stigma or bias.
+                            </p>
+</div>
+</div>
+<!-- Value Card 3 -->
+<div class="flex gap-4 rounded-xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-background-dark p-8 flex-col shadow-sm hover:shadow-md transition-shadow">
+<div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined">sell</span>
+</div>
+<div class="flex flex-col gap-2">
+<h3 class="text-navy dark:text-white text-xl font-bold leading-tight">Always Free</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                Accessible information for everyone. We believe vital health knowledge should be free and easy to find.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Teal Banner -->
+<section class="bg-gradient-to-r from-teal-500 to-primary py-16 px-4 sm:px-10 text-center text-white">
+<div class="max-w-[800px] mx-auto flex flex-col items-center gap-6">
+<h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight">
+                    Zero Judgment. Zero Jargon. <br/> Just Support.
+                </h2>
+<p class="text-teal-50 text-lg max-w-[600px]">
+                    Join a community that understands your journey intimately.
+                </p>
+<button class="bg-white text-primary hover:bg-teal-50 rounded-full px-8 py-3 font-bold text-base transition-colors shadow-lg mt-4">
+                    Explore Resources
+                </button>
+</div>
+</section>
+<!-- Disclaimers Section -->
+<section class="bg-white dark:bg-background-dark py-20 px-4 sm:px-10">
+<div class="max-w-[1000px] mx-auto">
+<h2 class="text-navy dark:text-white text-3xl font-bold text-center mb-12">What We Don't Do</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+<!-- Item 1 -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full p-1 shrink-0">
+<span class="material-symbols-outlined text-xl">close</span>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white text-lg">We don't prescribe</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">We are an information hub, not a clinic. We do not write prescriptions.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full p-1 shrink-0">
+<span class="material-symbols-outlined text-xl">close</span>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white text-lg">We don't replace doctors</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Our content is educational. Always consult your healthcare provider.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full p-1 shrink-0">
+<span class="material-symbols-outlined text-xl">close</span>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white text-lg">We don't sell data</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Your privacy is paramount. We do not sell your personal health data.</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-start gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/50">
+<div class="bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full p-1 shrink-0">
+<span class="material-symbols-outlined text-xl">close</span>
+</div>
+<div>
+<h4 class="font-bold text-navy dark:text-white text-lg">No medical claims</h4>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-1">We do not make unverified medical claims or promise miracle cures.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<section class="bg-peach-dark dark:bg-slate-800 py-24 px-4 text-center">
+<div class="max-w-[600px] mx-auto flex flex-col gap-6 items-center">
+<h2 class="text-navy dark:text-white text-4xl font-black tracking-[-0.02em]">
+                    Join thousands on the same path
+                </h2>
+<p class="text-slate-700 dark:text-slate-300 text-lg">
+                    Start your journey with clear guidance and a supportive community today.
+                </p>
+<div class="flex gap-4 mt-2">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-8 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-all shadow-md">
+<span class="truncate">Get Started</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-navy text-white py-16 px-10 border-t border-white/5">
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2 text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-3xl">health_and_safety</span>
+</div>
+<h2 class="text-lg font-bold">Body First</h2>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Empowering you with knowledge for your health journey.
+                    </p>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-base">Company</h3>
+<div class="flex flex-col gap-2">
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">About Us</a>
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Careers</a>
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Contact</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-base">Resources</h3>
+<div class="flex flex-col gap-2">
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Blog</a>
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Guides</a>
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">FAQ</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-bold text-base">Legal</h3>
+<div class="flex flex-col gap-2">
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-primary text-sm transition-colors" href="#">Disclaimer</a>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-white/10 text-center text-slate-500 text-sm">
+                © 2023 Body First. All rights reserved.
+            </div>
+</footer>
+</div>
+</body></html>

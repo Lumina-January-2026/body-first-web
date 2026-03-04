@@ -24,18 +24,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* ── Brand Colors (from design-tokens.json) ── */
+        /* ── Base tokens (from design-tokens.json) ── */
         peach: {
           start: tokens.colors.peachGradientStart,   // #FFE5D9
           end: tokens.colors.peachGradientEnd,         // #FFF5F0
         },
         teal: {
-          primary: tokens.colors.tealPrimary,          // #14B8A6
+          primary: tokens.colors.tealPrimary,          // #14B8A6 (accent only)
           dark: tokens.colors.tealDark,                // #0D9488
         },
         coral: tokens.colors.coralAccent,              // #F97316
         nav: {
-          dark: tokens.colors.navDark,                 // #1E1E2D
+          dark: tokens.colors.navDark,                 // #1E1E2D (app uses this)
         },
         gray: {
           900: tokens.colors.gray900,                  // #111827
@@ -45,6 +45,17 @@ module.exports = {
           100: tokens.colors.gray100,                  // #F3F4F6
         },
         'side-effects-blue': tokens.colors.sideEffectsBlue, // #1E3A5F
+
+        /* ── Web overrides (from Figma, do NOT change design-tokens.json) ── */
+        brand: {
+          blue: '#244489',     // Figma header blue
+          bg: '#FAFAFA',       // Figma page background
+          dark: '#111827',     // Figma primary button
+          gray: '#6B7280',     // Figma body text
+          muted: '#7D7D7D',   // Figma label text
+          green: '#4CAF50',    // Figma green accent
+          divider: '#EEEEEE', // Figma divider lines
+        },
       },
 
       fontFamily: {
@@ -73,11 +84,14 @@ module.exports = {
         'brand-md': `${tokens.borderRadius.md}px`,     // 12px
         'brand-lg': `${tokens.borderRadius.lg}px`,     // 16px
         'brand-xl': `${tokens.borderRadius.xl}px`,     // 20px
+        'brand-card': '32px',                          // Figma card radius
+        'brand-pill': '32px',                          // Figma pill/button radius
       },
 
       boxShadow: {
-        'card': tokens.shadows.card,                   // 0 2px 8px rgba(0,0,0,0.06)
-        'elevated': tokens.shadows.elevated,           // 0 4px 16px rgba(0,0,0,0.1)
+        'card': '0px 8px 24px -6px rgba(163,41,82,0.08)',     // Figma pink-tinted
+        'elevated': '0px 12px 32px -8px rgba(163,41,82,0.12)', // Figma elevated
+        'button': '0px 10px 15px -3px #e5e7eb, 0px 4px 6px -4px #e5e7eb', // Figma button
       },
 
       backgroundImage: {
@@ -85,5 +99,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };

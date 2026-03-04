@@ -1,0 +1,41 @@
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import './globals.css';
+
+const inter = Inter({ subsets: ['latin'] });
+
+export const metadata: Metadata = {
+  title: {
+    default: 'Body First - Your GLP-1 Planning Companion',
+    template: '%s | Body First',
+  },
+  description:
+    'Your trusted resource hub for GLP-1 medication planning. Compare medications, find savings, and get personalized support on your wellness journey.',
+  openGraph: {
+    type: 'website',
+    siteName: 'Body First',
+    title: 'Body First - Your GLP-1 Planning Companion',
+    description:
+      'Your trusted resource hub for GLP-1 medication planning. Compare medications, find savings, and get personalized support.',
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={inter.className}>
+      <body className="min-h-screen bg-brand-bg">
+        <Header />
+        <main className="min-w-0">
+          {children}
+        </main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Body First Resource Library</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#14b8a5", // Teal
+                        "primary-dark": "#0f766e",
+                        "secondary": "#f97316", // Coral
+                        "background-light": "#fffaf8", // Very light peach/off-white
+                        "background-dark": "#11211f",
+                        "navy": "#1e1e2d",
+                        "peach-light": "#fff5f0",
+                        "peach-dark": "#ffe5d9",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem", 
+                        "xl": "1.5rem", 
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display text-slate-900 dark:text-slate-100 selection:bg-primary selection:text-white overflow-x-hidden">
+<!-- Top Navigation -->
+<nav class="sticky top-0 z-50 bg-navy dark:bg-slate-900 border-b border-white/10 px-6 py-4">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between">
+<!-- Logo -->
+<div class="flex items-center gap-3 text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined !text-3xl">spa</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Body First</h1>
+</div>
+<!-- Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/90 hover:text-primary transition-colors text-sm font-medium" href="#">Resources</a>
+<a class="text-white/90 hover:text-primary transition-colors text-sm font-medium" href="#">Guides</a>
+<a class="text-white/90 hover:text-primary transition-colors text-sm font-medium" href="#">Tools</a>
+<a class="text-white/90 hover:text-primary transition-colors text-sm font-medium" href="#">Compare</a>
+<a class="text-white/90 hover:text-primary transition-colors text-sm font-medium" href="#">About</a>
+</div>
+<!-- CTA -->
+<button class="bg-primary hover:bg-primary-dark text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg hover:shadow-primary/25">
+                Get the App
+            </button>
+</div>
+</nav>
+<!-- Page Header -->
+<header class="bg-gradient-to-br from-peach-dark to-peach-light dark:from-slate-800 dark:to-slate-900 px-6 py-16 md:py-24">
+<div class="max-w-[960px] mx-auto text-center flex flex-col items-center gap-6">
+<h2 class="text-navy dark:text-white text-4xl md:text-5xl font-black tracking-tight leading-tight">
+                Resource Library
+            </h2>
+<p class="text-slate-600 dark:text-slate-300 text-lg md:text-xl font-medium max-w-2xl">
+                Expert guidance, clinical tools, and real stories to support your GLP-1 journey towards better health.
+            </p>
+<!-- Search Bar -->
+<div class="w-full max-w-xl mt-4 relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-4 rounded-xl border-none shadow-xl shadow-slate-200/50 dark:shadow-none bg-white dark:bg-slate-800 text-slate-900 dark:text-white placeholder:text-slate-400 focus:ring-2 focus:ring-primary focus:outline-none text-base transition-all" placeholder="Search for guides, tools, or topics (e.g., 'Side effects')" type="text"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow px-6 py-12 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-10">
+<!-- Filter Bar -->
+<div class="flex flex-wrap items-center justify-center gap-3">
+<button class="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium shadow-md shadow-primary/20 transition-transform hover:scale-105">
+                    All
+                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/30">
+                    Cost Savings
+                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/30">
+                    Side Effects
+                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/30">
+                    Getting Started
+                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/30">
+                    Comparisons
+                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/30">
+                    Lifestyle
+                </button>
+<button class="bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-primary hover:bg-slate-50 dark:hover:bg-slate-700 px-5 py-2 rounded-full text-sm font-medium border border-slate-200 dark:border-slate-700 transition-all hover:border-primary/30">
+                    Real Stories
+                </button>
+</div>
+<!-- Resource Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Documents and calculator on desk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Documents and calculator on desk representing insurance planning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbKiXYSgSWaVRVfzG1VPtfqkgwForPGEz9wCDPfKd-ttIsxTnBm5fGz0bj6KTj_jTcuyhfv_Euith8CKTov5T8DJot0Jb3qxKrefa9MgYYl_NhM0G0p54dnGcnLvgCYC-WsGx_iu14Kb1cfHNKp3mBm28tysKTUjZrpnwdaErmuOzTq2UlVM7hHYWZQhLdlNWAoEGyKQv0OuhQLUqUDcgG1WFIg4Kiu_tKbEbolWTQ0jc5SCQ8oQTedLA0Pd8NIgLuSW18n2CMQRww"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Cost Savings</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">Insurance Coverage Guide</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Navigating prior authorizations, copay cards, and coverage tiers effectively to minimize your monthly expenses.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 5 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-secondary transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Healthy green salad bowl" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Healthy green salad bowl representing nutrition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5d7eTZb_KIgOUE98WPdKFmVNcL7Xs_dxR6jTHlP6s_bAshYD1roytj30ySGctHXdtBBLfbU8BXR3xOWiEOS8sJJSaq8eLcYVYRvFYM0iJdviQHrBYS1ZFbl9Kc-lTNm6VtpzGmri8jgcs0MZGhunY3i1DJE3vZ56MATo9EHRf8eUjooamvzSDJ8rgKrvH9rm0KD-YjM97ghj3KoY7oE0Fsi71ONyYm_-9l_N8SL5WjTP2uk5VKHyeWpUix1Rfq71Mz2hSsCSWxizH"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Lifestyle</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-secondary transition-colors">Nutrition for GLP-1</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Understanding how your nutritional needs change and what to eat to maximize results and feel your best.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 8 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-navy transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Medical comparison chart on tablet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Medical comparison chart on tablet" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCniWmUPrHKqNI6x5hM8g7cXnqu2YjF8AsgIt09aoTskjtzFLk-gvUNBmseiiFfi7kpvlUNlaKpcxblbduKNlOuHgpej_JPcwUMdL0Bndce0NXYRnsUFc7DOgbT_Avnvq20jIWhRwpy8aC5TmcQYl47W280qrMCOkYw2N8nxeh2CH5GwNCGlDMu-9HeBXH8TxwpgTqryvOqaH0oI3FhTHx7jTuNGcpaHVocwCa4us-iwyHLOncuwRbxl8omhqJutZ-iViDmjiAugmv"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-navy dark:text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Comparisons</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">Medication Comparison</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">A detailed breakdown of different GLP-1 medications, their efficacy, side effect profiles, and typical dosing schedules.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 12 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-secondary transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Woman jogging in park" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Woman jogging in park representing active lifestyle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBop2U1ywHCNNR5NG6A0d4ZTiiIxnXQDeLOQTwjXp8QWt2yNphHRI2Tj6jiqW4Rwz5evGW-Y81HqIcn3aGY79GQB3Amg1Pt1V4Wfx38DoIynwrFH4kRqvXEO3uibxZUlsIovzoE91M90CWB79-EoMOv6DEvwEN12IAwkFhdbG3KCw328VfCUrcSWk2qbtd2js4k1aG1cufGk2zJc7BX0FZDRCDCRp8f0rvc2yBmh_srlj2t2hbjewZH7spy4LT8e041Hxvp_OLWOd4D"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Getting Started</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-secondary transition-colors">First Month Expectations</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">What to realistically expect during your first 30 days of treatment, from physical sensations to appetite changes.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 6 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Tea cup and ginger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Tea cup and ginger representing nausea relief" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2MUDfD-8wx0naq6CHbbwi1EwaFVp7nDoKP1SxcZdQAtQBegu9i7Ko9z0Ht73sCkbqnvEBIB138WTnPrqZHI7CDu_o8zHx6sEQ6pNcr3kEj59TssU7g4RTAEjO4iBHwpTPNwsj7yvR70rmFKm63Xrj-UJVahC_KxjH-vS0_VTdtqDDH2gt-iPVa_AAQ5uMJayuQvO3urPGbS5GsSOVU3iQRob_SQWx8aA6UrD-NU53sPVyI5JcYWoBb4ELC6LXdX85isBAtGXiDJXh"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Side Effects</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">Nausea Management</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Practical tips and home remedies to manage nausea, one of the most common side effects of GLP-1 medications.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 4 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 6 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-navy transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Two people talking in a living room" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Two people talking representing support and stories" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu440JwHJZDP5S5C4r_X2oTnrzMKp1jLXKrOvyKimiJpqiQBwmGY-pzS5kTYh2TFWWP_MLDnUW5TfPaT3CPlnUALl3QNn36pblN_-rSmfjMWmjDNzNW7y0x2eFrPVhTF0jjhWMFsVPUUbFbHxhetPDqTnTKef0_lqay6L9VvJQI64EWLuz-OCsQzFhJRu1vpSXBN3ulW0C05h2FmOQ2T3cSdYUIjYoDnkvc_aCYWIkjfKmdAP5JxGTCByFw6tj96KgTqxCatIqljD8"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-navy dark:text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Real Stories</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">Sarah's Journey: Year One</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Sarah shares her candid experience over 12 months, including the highs, the plateaus, and the lifestyle shifts.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 10 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 7 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-secondary transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Dumbbells and yoga mat" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dumbbells and yoga mat representing muscle maintenance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmOfB0AokAmgw1qVHl1kgUzQFo5vAVyTFvo4PRofsgcktpiD--1Tb6wD6b2P21gRODT80pFE-MeaZskKR7YApo8jsm9N1C8NbQa8QZPHhJJuNkj-zZlUPr-EROiHLl2n4yUbu2WNq_LG-8XB0pmgZlPT-2HDPH_LNfhvLEumkkpfozWCFv-jOCQ5-prBX7-SLAsQ4h9KM_jZBjpTJM9IOB8BlTIwPBBY_LSa6nMmYsbF3HYKXol_z-kSGum0no6IKc7C3dPTeWRiet"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-secondary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Lifestyle</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-secondary transition-colors">Maintaining Muscle Mass</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">Why strength training is non-negotiable on GLP-1s and a simple routine to get started at home.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 7 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 8 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-primary transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Doctor consulting patient" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Doctor consulting patient" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfmjCCCcqUuHcSm6dr3iqY5GBp_znUB-ad_12jwc_9BzgAnMZ4Q9t5n7uI2tH7XOR9YvqGQkfhSFIcVhtgMV4AbnAfPJAWPncwiFSBSOeKngtVaJQmQjLUSEmZc0hw63tmHTOCV5C9OI5HaArfHh7PCzZTC-J8CnYJ8tuRoZxx14IWC1D54RZcF6GbtTHf3BmxlDiZFYRdsdfazVOrKTP5LXKo6J_1zFP-dZFQIemt6_THyH6cPBJ1OeLD9kI9kjucOp-A1BBQcCgE"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Getting Started</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">Speaking to Your Doctor</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">How to advocate for yourself and questions to ask during your consultation about weight management.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 5 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Card 9 -->
+<article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-none border-t-4 border-navy transition-all duration-300 flex flex-col">
+<div class="relative h-48 overflow-hidden">
+<img alt="Wallet and coins" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Wallet and coins representing savings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFQS_I-lDRM0iC1EtkV_0oftAkjggmVZz5WpjkVqqA7ZZGUO7va2exTpF5jbSAGEgfOZswMtc29uxFpOfurrNvUiJlZ7NarTDcFTcU6d0JxvS-las5OyGoojQ8M9Uk8yizySOx1qvouWHtSCORPIpuovsPbKY4GudbkcZpR56dkTWnFRUMlQUU1FkCLzR5fGh_uTpIbOVHkoZ6nNJXHXGq6SKvEHTIZeee4-lyYYoWPgCgkuXKEyxlW-ygoaaH7_u3wMW-TQWtk3vo"/>
+<span class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur text-navy dark:text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Cost Savings</span>
+</div>
+<div class="p-6 flex flex-col flex-1">
+<h3 class="text-xl font-bold text-navy dark:text-white mb-2 leading-tight group-hover:text-primary transition-colors">Compounded vs. Brand Name</h3>
+<p class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">An unbiased look at the cost differences and safety considerations between brand name drugs and compounded alternatives.</p>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-4">
+<span class="text-slate-400 text-xs flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 9 min read
+                            </span>
+<a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                Read <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-6 mt-8">
+<a class="text-primary font-medium hover:text-primary-dark transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back_ios</span> Previous
+                </a>
+<div class="flex items-center gap-2">
+<span class="bg-primary text-white size-8 flex items-center justify-center rounded-full text-sm font-bold shadow-md shadow-primary/20">1</span>
+<a class="text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 size-8 flex items-center justify-center rounded-full text-sm font-medium transition-all" href="#">2</a>
+<a class="text-slate-500 hover:text-primary hover:bg-slate-100 dark:hover:bg-slate-800 size-8 flex items-center justify-center rounded-full text-sm font-medium transition-all" href="#">3</a>
+</div>
+<a class="text-primary font-medium hover:text-primary-dark transition-colors flex items-center gap-1" href="#">
+                    Next <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-navy dark:bg-slate-900 text-white pt-16 pb-8 border-t border-white/5">
+<div class="max-w-[1440px] mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary !text-3xl">spa</span>
+<span class="text-xl font-bold tracking-tight">Body First</span>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed">
+                        Empowering your journey to health with expert-backed resources, community support, and the tools you need to succeed.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-white">Platform</h4>
+<ul class="flex flex-col gap-3 text-sm text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Resources</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Tools</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compare</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-white">Company</h4>
+<ul class="flex flex-col gap-3 text-sm text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-white">Stay Connected</h4>
+<p class="text-slate-400 text-sm mb-4">Get the latest updates and health tips.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-none rounded-lg px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:ring-1 focus:ring-primary w-full" placeholder="Enter email" type="email"/>
+<button class="bg-primary hover:bg-primary-dark text-white px-3 py-2 rounded-lg text-sm font-bold transition-colors">Join</button>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-slate-500 text-xs">© 2024 Body First Wellness Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">thumb_up</span></a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

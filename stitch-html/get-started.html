@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Body First - Get Started</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#14b3a0",
+                        "primary-dark": "#0d7a6c",
+                        "navy": "#1E1E2D",
+                        "peach": "#FFE5D9",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#11211f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #14b3a0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d7a6c;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary/30 selection:text-primary-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap bg-navy px-10 py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-3xl">health_and_safety</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Body First</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="hidden md:flex items-center gap-9">
+<a class="text-slate-200 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-slate-200 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Resources</a>
+<a class="text-slate-200 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">Community</a>
+<a class="text-slate-200 hover:text-white transition-colors text-sm font-medium leading-normal" href="#">About</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-navy text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Get the App</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full bg-gradient-to-b from-peach/30 to-white px-4 py-16 md:py-24">
+<div class="layout-content-container mx-auto flex max-w-[1200px] flex-col gap-10 md:flex-row md:items-center">
+<div class="flex flex-1 flex-col gap-6 md:pr-10">
+<div class="flex flex-col gap-4 text-left">
+<span class="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-primary-dark">
+<span class="material-symbols-outlined !text-sm">verified</span>
+                            #1 Trusted Resource
+                        </span>
+<h1 class="text-navy text-4xl font-black leading-[1.1] tracking-[-0.033em] md:text-6xl lg:text-7xl">
+                            Start Your <span class="text-primary">Journey</span> Today
+                        </h1>
+<h2 class="text-slate-600 text-lg font-normal leading-relaxed md:text-xl max-w-xl">
+                            Your comprehensive resource for GLP-1 medication success. Track your progress, find support, and access expert advice all in one place.
+                        </h2>
+</div>
+<div class="flex flex-col gap-4 sm:flex-row">
+<button class="flex h-14 min-w-[160px] cursor-pointer items-center justify-center rounded-full bg-primary px-8 text-base font-bold text-navy transition-transform hover:scale-105 hover:shadow-lg hover:bg-primary-dark hover:text-white">
+                            Get Started Now
+                        </button>
+<button class="flex h-14 min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-8 text-base font-bold text-navy transition-colors hover:bg-slate-50">
+<span class="material-symbols-outlined">play_circle</span>
+                            Watch Demo
+                        </button>
+</div>
+<div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
+<div class="flex -space-x-3">
+<img alt="User portrait" class="h-10 w-10 rounded-full border-2 border-white object-cover" data-alt="Smiling woman portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXOW1KLAs_o-mxvj7hzBsBEfEIomAVccYs0hOIVQeXuPeUWctbswL79y9iV3_FYCrYL25ZOgeLS575l49x_syaoyaOxwwh7A1K2_wP-7WJt23Js1rXUohpuPk--ghHbdNp2A2hugPHtVr9-xVMEK8kVxK09Kfajj4TfjCKvgjSoOc_8ssuWNHkWU02RNKIzm3qb-qCZX9B5fPEWQFyAjsNDY7MesGY0x6JDg0c3qutqQVYTp3_6uGmAdOHWvh4w1DgypcmeYzRYQ1y"/>
+<img alt="User portrait" class="h-10 w-10 rounded-full border-2 border-white object-cover" data-alt="Man portrait outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTHhDffee_cG3hi8WNdWkwOVk4MhzfRopsLUOJXwEQcwDGB36BmcgOJ0NMHiIEnB5T-M_ISASkPWbxjhDOvBPfmC5pOuhheViuP2n36YC3eUg0ifq3jJNuyUvcGwEe2_66QkGGvTdcPlYhm9KXUNVZm-D0LKH5M5iP56mmbaNKCDdN5zpMnf1b7EVkWfNz_3XTAXajJJTKgF5y9d5SS0vGXV5jymm0JO6mqhCllZ46OlEp97sIYaBAjM6DApQKDNnnWZp23AR9X1PH"/>
+<img alt="User portrait" class="h-10 w-10 rounded-full border-2 border-white object-cover" data-alt="Woman looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIYgOFjJs_EGyYHHpLUCIw7Q5zX7Jeq8QC4uNG2siw7OXarxrzUBX_Qq7HC_8Zxy7vnVc89WZ-pdK7wvTzjWzJqy01VgIpXCg0Bs0izKGMobpofAvuJtbNN5P8OKgo2t6nYj7_p9llxUoCleaLvOv-mP_bQCQSTwt34RwUoS9y4xg0WQZ22c7yVUS6A2DTZOlpILAql3QYdd9V6QTWv5F1ysqSJlEpmSL1lLyGOxzimFCE-qGBWGxvEnd3q2-EZs7njzfCCVtE7rMY"/>
+<div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-slate-100 text-xs font-bold text-navy">+2k</div>
+</div>
+<p>Join our growing community</p>
+</div>
+</div>
+<div class="flex flex-1 justify-center md:justify-end">
+<div class="relative w-full max-w-[400px]">
+<!-- Abstract decoration blob -->
+<div class="absolute -top-10 -right-10 h-64 w-64 rounded-full bg-peach blur-3xl opacity-60"></div>
+<div class="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-primary/20 blur-3xl opacity-60"></div>
+<!-- Phone Mockup -->
+<div class="relative z-10 mx-auto aspect-[9/19] w-full max-w-[320px] rounded-[3rem] border-[8px] border-navy bg-navy shadow-2xl overflow-hidden">
+<div class="absolute top-0 left-1/2 h-6 w-32 -translate-x-1/2 rounded-b-xl bg-navy z-20"></div>
+<div class="h-full w-full bg-white overflow-hidden flex flex-col">
+<!-- App Header -->
+<div class="bg-primary p-6 pt-12 text-white">
+<h3 class="font-bold text-lg">Good Morning, Alex</h3>
+<p class="text-sm opacity-90">Day 12 of your journey</p>
+</div>
+<!-- App Content Placeholder -->
+<div class="p-4 flex flex-col gap-4 bg-slate-50 flex-1">
+<div class="rounded-xl bg-white p-4 shadow-sm">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold text-slate-400 uppercase">Weight Tracker</span>
+<span class="material-symbols-outlined text-primary text-sm">show_chart</span>
+</div>
+<div class="h-24 w-full bg-gradient-to-r from-primary/10 to-primary/5 rounded-lg flex items-end p-2 gap-1">
+<div class="w-1/5 h-[60%] bg-primary/40 rounded-t"></div>
+<div class="w-1/5 h-[55%] bg-primary/40 rounded-t"></div>
+<div class="w-1/5 h-[50%] bg-primary/60 rounded-t"></div>
+<div class="w-1/5 h-[45%] bg-primary/80 rounded-t"></div>
+<div class="w-1/5 h-[40%] bg-primary rounded-t"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-white p-3 rounded-xl shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-orange-400">water_drop</span>
+<span class="text-sm font-bold">Water</span>
+<span class="text-xs text-slate-500">1.2L / 2.5L</span>
+</div>
+<div class="bg-white p-3 rounded-xl shadow-sm flex flex-col gap-2">
+<span class="material-symbols-outlined text-green-500">restaurant</span>
+<span class="text-sm font-bold">Protein</span>
+<span class="text-xs text-slate-500">80g / 120g</span>
+</div>
+</div>
+<div class="bg-navy rounded-xl p-4 text-white mt-auto mb-4">
+<p class="text-sm font-medium">Daily Tip</p>
+<p class="text-xs opacity-70 mt-1">Stay hydrated to manage side effects.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<div class="w-full border-y border-slate-100 bg-white py-12">
+<div class="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-8 px-4 md:px-10">
+<div class="flex flex-1 min-w-[200px] flex-col items-center gap-1 text-center md:items-start md:text-left">
+<div class="mb-2 flex size-10 items-center justify-center rounded-full bg-peach text-orange-600">
+<span class="material-symbols-outlined">groups</span>
+</div>
+<p class="text-3xl font-bold tracking-tight text-navy">10,000+</p>
+<p class="text-sm font-medium text-slate-500">Active Users</p>
+</div>
+<div class="flex flex-1 min-w-[200px] flex-col items-center gap-1 text-center md:items-start md:text-left">
+<div class="mb-2 flex size-10 items-center justify-center rounded-full bg-yellow-100 text-yellow-600">
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="text-3xl font-bold tracking-tight text-navy">4.8</p>
+<p class="text-sm font-medium text-slate-500">Star Rating</p>
+</div>
+<div class="flex flex-1 min-w-[200px] flex-col items-center gap-1 text-center md:items-start md:text-left">
+<div class="mb-2 flex size-10 items-center justify-center rounded-full bg-blue-100 text-blue-600">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<p class="text-3xl font-bold tracking-tight text-navy">50+</p>
+<p class="text-sm font-medium text-slate-500">Expert Resources</p>
+</div>
+<div class="flex flex-1 min-w-[200px] flex-col items-center gap-1 text-center md:items-start md:text-left">
+<div class="mb-2 flex size-10 items-center justify-center rounded-full bg-primary/20 text-primary-dark">
+<span class="material-symbols-outlined">savings</span>
+</div>
+<p class="text-3xl font-bold tracking-tight text-navy">Free</p>
+<p class="text-sm font-medium text-slate-500">To Start Today</p>
+</div>
+</div>
+</div>
+<!-- App Promo Split Section -->
+<section class="bg-white py-20 px-4">
+<div class="mx-auto flex max-w-[1200px] flex-col-reverse items-center gap-16 md:flex-row">
+<!-- Left: Content -->
+<div class="flex flex-1 flex-col gap-8 md:pr-8">
+<div class="flex flex-col gap-4">
+<h2 class="text-navy text-3xl font-bold leading-tight md:text-4xl">Take Body First With You</h2>
+<p class="text-slate-600 text-lg">Manage your treatment journey anywhere, anytime. Our mobile app puts the tools you need right in your pocket.</p>
+</div>
+<ul class="flex flex-col gap-6">
+<li class="flex items-start gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary-dark">
+<span class="material-symbols-outlined">calculate</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-navy">Cost Calculator</h3>
+<p class="text-slate-500">Estimate your monthly expenses and find savings instantly.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary-dark">
+<span class="material-symbols-outlined">monitor_heart</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-navy">Side Effect Tracker</h3>
+<p class="text-slate-500">Log symptoms daily and get personalized management tips.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary-dark">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-navy">Supportive Community</h3>
+<p class="text-slate-500">Connect with others on the same path for motivation and advice.</p>
+</div>
+</li>
+</ul>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex items-center gap-3 rounded-xl bg-navy px-5 py-3 text-white transition-opacity hover:opacity-90">
+<span class="material-symbols-outlined text-3xl">ios</span>
+<div class="flex flex-col items-start leading-none">
+<span class="text-[10px] uppercase">Download on the</span>
+<span class="text-base font-bold">App Store</span>
+</div>
+</button>
+<button class="flex items-center gap-3 rounded-xl bg-navy px-5 py-3 text-white transition-opacity hover:opacity-90">
+<span class="material-symbols-outlined text-3xl">android</span>
+<div class="flex flex-col items-start leading-none">
+<span class="text-[10px] uppercase">Get it on</span>
+<span class="text-base font-bold">Google Play</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Right: Image -->
+<div class="relative flex flex-1 items-center justify-center">
+<div class="relative z-10 w-full max-w-md">
+<img alt="Mobile app interface" class="mx-auto rounded-3xl shadow-2xl" data-alt="Person holding smartphone with health app" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgzkuoBqDnWk5-kKU-j23Plhtdu2XZvLnr_MdIpibzJSSv-vO61AewzbC0Wpr02ouMBwtL_I9DMk6MPDDaQ2E_3-X2CFZSX-doe8wJ_abGmjbz5ctXYOOc4xp5r6juHR-arlmsKfAPPf7xQBHLrKe_l9F7UV-XQxHWSush-IGbJoj9kmEmo_0rdowj1gfD4Syh5W4NSLLsFgsRTzSAAtO1LiRkMtaYVoaS_WUXQkdPxUEQrwb0_b6akzAnlzv8Rmi7LelEh2znqDc-"/>
+<!-- Floating Badge -->
+<div class="absolute -bottom-6 -left-6 z-20 flex items-center gap-3 rounded-xl bg-white p-4 shadow-xl">
+<div class="flex size-10 items-center justify-center rounded-full bg-green-100 text-green-600">
+<span class="material-symbols-outlined">check</span>
+</div>
+<div>
+<p class="text-sm font-bold text-navy">Daily Goal</p>
+<p class="text-xs text-slate-500">Completed!</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="relative bg-peach/30 py-20 px-4">
+<div class="mx-auto max-w-[800px]">
+<div class="overflow-hidden rounded-2xl bg-white shadow-xl">
+<div class="border-b border-slate-100 bg-white p-8 text-center md:p-10">
+<h2 class="text-3xl font-bold text-navy">Get in Touch</h2>
+<p class="mt-2 text-slate-500">Have questions about your prescription or the app? We're here to help.</p>
+</div>
+<div class="p-8 md:p-10">
+<form class="flex flex-col gap-6">
+<div class="grid gap-6 md:grid-cols-2">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-navy">Full Name</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">person</span>
+<input class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-navy placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Jane Doe" type="text"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-navy">Email Address</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">mail</span>
+<input class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-navy placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary" placeholder="jane@example.com" type="email"/>
+</div>
+</label>
+</div>
+<div class="grid gap-6 md:grid-cols-2">
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-navy">Phone Number</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">phone</span>
+<input class="w-full rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-navy placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary" placeholder="(555) 000-0000" type="tel"/>
+</div>
+</label>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-navy">Interest</span>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">category</span>
+<select class="w-full appearance-none rounded-xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-10 text-navy focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary">
+<option>General Inquiry</option>
+<option>App Support</option>
+<option>Medical Questions</option>
+<option>Partnership</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">expand_more</span>
+</div>
+</label>
+</div>
+<label class="flex flex-col gap-2">
+<span class="text-sm font-medium text-navy">Message</span>
+<textarea class="h-32 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 text-navy placeholder:text-slate-400 focus:border-primary focus:bg-white focus:outline-none focus:ring-1 focus:ring-primary" placeholder="How can we help you today?"></textarea>
+</label>
+<button class="mt-2 flex w-full cursor-pointer items-center justify-center rounded-full bg-primary py-4 text-base font-bold text-navy shadow-lg transition-transform hover:translate-y-[-2px] hover:bg-primary-dark hover:text-white" type="button">
+                                Send Message
+                            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="bg-peach/30 pb-20 px-4">
+<div class="mx-auto max-w-[800px]">
+<h2 class="mb-10 text-center text-3xl font-bold text-navy">Frequently Asked Questions</h2>
+<div class="flex flex-col gap-4">
+<!-- FAQ Item 1 -->
+<details class="group rounded-xl bg-white shadow-sm ring-1 ring-slate-200 open:ring-primary/50">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 font-bold text-navy marker:hidden">
+<span>How does the cost calculator work?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600">
+                            Our calculator uses real-time pricing data from major pharmacies and considers your insurance provider to give you an accurate estimate of your monthly medication costs.
+                        </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="group rounded-xl bg-white shadow-sm ring-1 ring-slate-200 open:ring-primary/50">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 font-bold text-navy marker:hidden">
+<span>Is the community anonymous?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600">
+                            Yes, your privacy is our priority. You can choose a username and avatar to interact with the community without revealing your personal identity.
+                        </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="group rounded-xl bg-white shadow-sm ring-1 ring-slate-200 open:ring-primary/50">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 font-bold text-navy marker:hidden">
+<span>Can I track multiple medications?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600">
+                            Absolutely. The Body First app allows you to track GLP-1 medications alongside other prescriptions, supplements, and vitamins.
+                        </div>
+</details>
+<!-- FAQ Item 4 -->
+<details class="group rounded-xl bg-white shadow-sm ring-1 ring-slate-200 open:ring-primary/50">
+<summary class="flex cursor-pointer list-none items-center justify-between p-6 font-bold text-navy marker:hidden">
+<span>Is the app really free?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="px-6 pb-6 text-slate-600">
+                            The core features including tracking, community access, and resources are completely free. We offer a premium subscription for 1-on-1 coaching services.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-navy py-12 px-10 text-slate-300">
+<div class="mx-auto max-w-[1200px]">
+<div class="flex flex-col gap-10 md:flex-row md:justify-between">
+<div class="flex max-w-xs flex-col gap-4">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined !text-3xl text-primary">health_and_safety</span>
+<span class="text-xl font-bold">Body First</span>
+</div>
+<p class="text-sm leading-relaxed">
+                            Empowering your health journey with tools, community, and expert guidance for GLP-1 success.
+                        </p>
+<div class="flex gap-4">
+<a class="flex size-8 items-center justify-center rounded-full bg-slate-800 text-white transition-colors hover:bg-primary" href="#">
+<span class="sr-only">Twitter</span>
+<svg class="h-4 w-4" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="flex size-8 items-center justify-center rounded-full bg-slate-800 text-white transition-colors hover:bg-primary" href="#">
+<span class="sr-only">Instagram</span>
+<svg class="h-4 w-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-12 md:gap-20">
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white">Platform</h4>
+<a class="text-sm hover:text-primary" href="#">How it Works</a>
+<a class="text-sm hover:text-primary" href="#">Features</a>
+<a class="text-sm hover:text-primary" href="#">Pricing</a>
+<a class="text-sm hover:text-primary" href="#">Download App</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white">Resources</h4>
+<a class="text-sm hover:text-primary" href="#">Blog</a>
+<a class="text-sm hover:text-primary" href="#">Community</a>
+<a class="text-sm hover:text-primary" href="#">FAQ</a>
+<a class="text-sm hover:text-primary" href="#">Support</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-bold text-white">Company</h4>
+<a class="text-sm hover:text-primary" href="#">About Us</a>
+<a class="text-sm hover:text-primary" href="#">Careers</a>
+<a class="text-sm hover:text-primary" href="#">Legal</a>
+<a class="text-sm hover:text-primary" href="#">Contact</a>
+</div>
+</div>
+</div>
+<div class="mt-12 border-t border-slate-800 pt-8 text-center text-xs text-slate-500 md:text-left">
+<p>© 2023 Body First. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
