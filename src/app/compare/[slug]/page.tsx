@@ -13,9 +13,13 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  const slugs = getAllComparisonSlugs();
-  if (slugs.length === 0) return [{ slug: '_placeholder' }];
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const slugs = getAllComparisonSlugs();
+    if (!slugs?.length) return [{ slug: '_placeholder' }];
+    return slugs.map((slug) => ({ slug }));
+  } catch {
+    return [{ slug: '_placeholder' }];
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

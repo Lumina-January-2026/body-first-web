@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllBlogSlugs, getAllBlogPosts, markdownToHtml } from '@/lib/content';
+import { getAllBlogPosts, markdownToHtml } from '@/lib/content';
 import { formatDate, getCategoryLabel } from '@/lib/utils';
 import Badge from '@/components/common/Badge';
 import AppDownloadCTA from '@/components/cta/AppDownloadCTA';
@@ -13,9 +13,13 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  const slugs = getAllBlogSlugs();
-  if (slugs.length === 0) return [{ slug: '_placeholder' }];
-  return slugs.map((slug) => ({ slug }));
+  try {
+    const posts = getAllBlogPosts();
+    if (!posts?.length) return [{ slug: '_placeholder' }];
+    return posts.map((post) => ({ slug: post.slug }));
+  } catch {
+    return [{ slug: '_placeholder' }];
+  }
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
