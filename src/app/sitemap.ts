@@ -3,7 +3,7 @@ import { getAllResources, getAllGuides, getAllBlogPosts, getAllComparisons } fro
 
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://bodyfirst.com';
+const BASE_URL = 'https://bodyfirst.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const resources = getAllResources().map((r) => ({

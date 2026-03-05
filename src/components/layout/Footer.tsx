@@ -74,7 +74,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} Body First Wellness. All rights reserved.
+            &copy; {new Date().getFullYear()} Boolean Bliss LLC. All rights reserved.
             Content is for informational purposes only — always consult your healthcare provider.
           </p>
           <div className="flex gap-4 text-xs text-gray-500">

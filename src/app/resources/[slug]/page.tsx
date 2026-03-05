@@ -58,7 +58,7 @@ export default async function ResourcePage({ params }: PageProps) {
         author={frontmatter.author}
         publishedAt={frontmatter.publishedAt}
         updatedAt={frontmatter.updatedAt}
-        url={`https://bodyfirst.com/resources/${slug}`}
+        url={`https://bodyfirst.app/resources/${slug}`}
       />
 
       {/* Article Header — peach gradient */}

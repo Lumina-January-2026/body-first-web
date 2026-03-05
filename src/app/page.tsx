@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <>
-      <StructuredData type="WebSite" name="Body First" url="https://bodyfirst.com" />
+      <StructuredData type="WebSite" name="Body First" url="https://bodyfirst.app" />
 
       {/* Hero Section */}
       <section className="bg-brand-bg py-16 md:py-24 px-6">
