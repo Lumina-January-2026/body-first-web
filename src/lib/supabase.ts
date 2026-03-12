@@ -14,14 +14,26 @@ function getSupabase(): SupabaseClient | null {
   return cached;
 }
 
-const noop = () => Promise.resolve({ data: null, error: null });
+// Chainable noop that returns { data: null, error: null } when awaited
+const noopResult = Promise.resolve({ data: null, error: null });
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const noopChain: any = new Proxy(noopResult as any, {
+  get(target: any, prop: string | symbol) {
+    if (prop === 'then' || prop === 'catch' || prop === 'finally') {
+      return target[prop].bind(target);
+    }
+    return () => noopChain;
+  },
+});
 
 export const supabase: SupabaseClient = new Proxy({} as SupabaseClient, {
   get(_target, prop) {
     const client = getSupabase();
     if (!client) {
-      if (prop === 'from') return () => ({ select: noop, insert: noop, update: noop, delete: noop, upsert: noop });
-      return noop;
+      // auth is accessed as a property, not a function call
+      if (prop === 'auth') return noopChain;
+      if (prop === 'from') return () => noopChain;
+      return () => noopChain;
     }
     return (client as unknown as Record<string | symbol, unknown>)[prop];
   },

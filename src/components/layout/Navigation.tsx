@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Button from '@/components/common/Button';
 
 interface NavLink {
   href: string;
@@ -10,28 +9,32 @@ interface NavigationProps {
   open: boolean;
   links: NavLink[];
   onClose: () => void;
+  onJoinClick?: () => void;
 }
 
-export default function Navigation({ open, links, onClose }: NavigationProps) {
+export default function Navigation({ open, links, onClose, onJoinClick }: NavigationProps) {
   if (!open) return null;
 
   return (
-    <div className="md:hidden border-t border-white/10 bg-brand-blue relative">
-      <nav className="flex flex-col px-6 py-4 gap-1">
+    <div className="md:hidden border-t border-gray-100 bg-white">
+      <nav className="flex flex-col px-4 py-3 gap-0.5">
         {links.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             onClick={onClose}
-            className="px-4 py-3 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200"
+            className="px-4 py-3 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
           >
             {link.label}
           </Link>
         ))}
-        <div className="mt-3 pt-3 border-t border-white/10">
-          <Button href="/get-started" size="md" fullWidth className="!bg-white !text-brand-dark hover:!bg-gray-100">
-            Get the App
-          </Button>
+        <div className="mt-2 pt-2 border-t border-gray-100 flex flex-col gap-2">
+          <button
+            onClick={() => { onClose(); onJoinClick?.(); }}
+            className="w-full bg-teal-primary hover:bg-teal-dark text-white text-sm font-semibold py-3 rounded-xl transition-colors"
+          >
+            Join the Community
+          </button>
         </div>
       </nav>
     </div>
