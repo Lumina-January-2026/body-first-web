@@ -1,3 +1,15 @@
+/**
+ * Header — sticky top nav with auth + post creation.
+ *
+ * Auth flow: clicking "Sign in" redirects to /auth page which offers
+ * Google, Apple, and Email/Password sign-in. After auth, the header
+ * shows the user's profile avatar with a dropdown menu.
+ *
+ * If the user is authenticated but has no community profile (e.g. mobile
+ * user visiting web for first time), "Share Your Story" prompts the
+ * JoinModal to create a profile first.
+ */
+
 'use client';
 
 import Link from 'next/link';
@@ -12,17 +24,21 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/resources', label: 'Resources' },
   { href: '/about', label: 'About' },
+  { href: '/support', label: 'Support' },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const { profile, isAuthenticated, signIn, signOut, showProfileModal, openProfileModal, closeProfileModal } = useProfile();
+  const { profile, isAuthenticated, signOut, showProfileModal, openProfileModal, closeProfileModal, needsProfile } = useProfile();
 
   const handleShareClick = () => {
     if (!isAuthenticated) {
-      signIn();
+      // Redirect to auth page
+      if (typeof window !== 'undefined') {
+        window.location.href = '/auth';
+      }
       return;
     }
     if (!profile) {
@@ -31,6 +47,12 @@ export default function Header() {
     }
     setShowCreateModal(true);
   };
+
+  // If user just signed in and needs a profile, show the modal automatically
+  if (needsProfile && isAuthenticated && !showProfileModal) {
+    // Trigger on next tick to avoid render-during-render
+    setTimeout(() => openProfileModal(), 0);
+  }
 
   return (
     <>
@@ -90,12 +112,12 @@ export default function Header() {
                 )}
               </div>
             ) : (
-              <button
-                onClick={signIn}
+              <Link
+                href="/auth"
                 className="bg-teal-primary hover:bg-teal-dark text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
               >
                 Sign in
-              </button>
+              </Link>
             )}
           </div>
 
@@ -122,7 +144,9 @@ export default function Header() {
           onJoinClick={() => {
             setMenuOpen(false);
             if (!isAuthenticated) {
-              signIn();
+              if (typeof window !== 'undefined') {
+                window.location.href = '/auth';
+              }
             } else {
               openProfileModal();
             }

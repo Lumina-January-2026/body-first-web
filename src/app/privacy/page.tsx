@@ -47,6 +47,7 @@ export default function PrivacyPage() {
             <ul>
               <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, and mobile network information.</li>
               <li><strong>Usage Data:</strong> Features accessed, screens viewed, session duration, and in-app interactions.</li>
+              <li><strong>Coarse Location:</strong> Approximate, city-level location to provide regionally relevant content. We do not collect precise GPS-level location.</li>
               <li><strong>Log Data:</strong> IP address, browser type (for the Website), access times, and referring URLs.</li>
               <li><strong>Purchase Information:</strong> Subscription status, transaction identifiers, and billing periods are processed through our subscription management provider. We do not directly collect or store your payment card details.</li>
             </ul>
@@ -179,7 +180,103 @@ export default function PrivacyPage() {
             </p>
 
             {/* Section 12 */}
-            <h2>12. Medical Disclaimer</h2>
+            <h2>12. Apple App Store Privacy Labels</h2>
+            <p>
+              The following table reflects the data collection declarations we make in Apple App Store Connect.
+              These labels describe what data the Body First app collects, whether it is linked to your identity,
+              and whether it is used for tracking.
+            </p>
+            <div className="overflow-x-auto my-6">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-gray-200">
+                    <th className="text-left py-3 pr-4 font-semibold text-gray-900">Category</th>
+                    <th className="text-left py-3 pr-4 font-semibold text-gray-900">Data Type</th>
+                    <th className="text-center py-3 pr-4 font-semibold text-gray-900">Collected</th>
+                    <th className="text-center py-3 pr-4 font-semibold text-gray-900">Linked to You</th>
+                    <th className="text-center py-3 pr-4 font-semibold text-gray-900">Used for Tracking</th>
+                    <th className="text-left py-3 font-semibold text-gray-900">Purpose</th>
+                  </tr>
+                </thead>
+                <tbody className="text-brand-gray">
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4" rowSpan={2}>Contact Info</td>
+                    <td className="py-3 pr-4">Name</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">App functionality</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Email Address</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">App functionality</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Health &amp; Fitness</td>
+                    <td className="py-3 pr-4">Health</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">App functionality (onboarding personalization)</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Location</td>
+                    <td className="py-3 pr-4">Coarse Location</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">App functionality (regional content)</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Identifiers</td>
+                    <td className="py-3 pr-4">Device ID</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">Analytics</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Usage Data</td>
+                    <td className="py-3 pr-4">Product Interaction</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">Analytics, app functionality</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Purchases</td>
+                    <td className="py-3 pr-4">Purchase History</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">App functionality (subscription management)</td>
+                  </tr>
+                  <tr className="border-b border-gray-100">
+                    <td className="py-3 pr-4">Diagnostics</td>
+                    <td className="py-3 pr-4">Performance Data</td>
+                    <td className="py-3 pr-4 text-center">Yes</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3 pr-4 text-center">No</td>
+                    <td className="py-3">App functionality</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>
+              <strong>Data not collected:</strong> Precise location, financial information (payment card details),
+              sensitive information, contacts, photos, audio, video, browsing history, search history, or any other
+              data types not listed above.
+            </p>
+            <p>
+              <strong>No data is used for tracking.</strong> We do not track you across apps or websites owned by
+              other companies for the purposes of advertising or advertising measurement.
+            </p>
+
+            {/* Section 13 */}
+            <h2>13. Medical Disclaimer</h2>
             <p>
               Body First provides educational and informational content only. <strong>We are not a medical device and do
               not provide medical advice, diagnosis, or treatment.</strong> We do not collect, store, or process clinical
@@ -195,8 +292,8 @@ export default function PrivacyPage() {
               condition or medication.
             </p>
 
-            {/* Section 13 */}
-            <h2>13. Changes to This Privacy Policy</h2>
+            {/* Section 14 */}
+            <h2>14. Changes to This Privacy Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. When we make material changes, we will notify you
               by posting the updated policy on this page with a new effective date and, where appropriate, through
@@ -207,8 +304,8 @@ export default function PrivacyPage() {
               We encourage you to review this page periodically.
             </p>
 
-            {/* Section 14 */}
-            <h2>14. Contact Us</h2>
+            {/* Section 15 */}
+            <h2>15. Contact Us</h2>
             <p>If you have questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
             <ul>
               <li><strong>Boolean Bliss LLC</strong></li>

@@ -23,6 +23,8 @@ export default function Footer() {
           <Link href="/terms" className="hover:text-gray-700 transition-colors">Terms</Link>
           <span className="text-gray-200">&middot;</span>
           <Link href="/about" className="hover:text-gray-700 transition-colors">About</Link>
+          <span className="text-gray-200">&middot;</span>
+          <Link href="/support" className="hover:text-gray-700 transition-colors">Support</Link>
         </div>
       </div>
     </footer>
