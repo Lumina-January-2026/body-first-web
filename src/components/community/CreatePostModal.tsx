@@ -1,3 +1,9 @@
+/**
+ * CreatePostModal — form for creating community posts.
+ *
+ * Creates posts with both user_id (for RLS) and profile_id (for display).
+ */
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -13,7 +19,7 @@ interface CreatePostModalProps {
 }
 
 export default function CreatePostModal({ open, onClose, onPostCreated }: CreatePostModalProps) {
-  const { profile, profileId, openProfileModal } = useProfile();
+  const { profile, user, openProfileModal } = useProfile();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [category, setCategory] = useState<Category>('real-stories');
@@ -38,7 +44,7 @@ export default function CreatePostModal({ open, onClose, onPostCreated }: Create
     };
   }, [open, profile, openProfileModal, onClose]);
 
-  if (!open || !profile) return null;
+  if (!open || !profile || !user) return null;
 
   const toggleMedication = (med: Medication) => {
     setMedications((prev) =>
@@ -48,9 +54,9 @@ export default function CreatePostModal({ open, onClose, onPostCreated }: Create
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title.trim() || !body.trim() || !profileId) return;
+    if (!title.trim() || !body.trim() || !user) return;
     setSubmitting(true);
-    const post = await createPost(profileId, title.trim(), body.trim(), category, medications);
+    const post = await createPost(user.id, profile.id, title.trim(), body.trim(), category, medications);
     setSubmitting(false);
     if (post) {
       setTitle('');

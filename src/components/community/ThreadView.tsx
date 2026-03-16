@@ -28,6 +28,20 @@ export default function ThreadView({ postId }: ThreadViewProps) {
   const [post, setPost] = useState<CommunityPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<CommunityPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = async () => {
+    const url = `${window.location.origin}/community?post=${postId}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: post?.title ?? 'Community Post', url });
+        return;
+      } catch { /* user cancelled */ }
+    }
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -75,8 +89,8 @@ export default function ThreadView({ postId }: ThreadViewProps) {
     );
   }
 
-  const nickname = post.profile?.nickname ?? 'Anonymous';
-  const color = post.profile?.color ?? '#9CA3AF';
+  const nickname = post.author_nickname ?? 'Anonymous';
+  const color = post.author_color ?? '#9CA3AF';
   const emoji = getCategoryEmoji(post.category as Category);
   const categoryLabel = getCategoryLabel(post.category as Category);
 
@@ -137,12 +151,12 @@ export default function ThreadView({ postId }: ThreadViewProps) {
 
             {/* Actions */}
             <div className="flex items-center gap-4 pt-4 border-t border-gray-100">
-              <button className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-600 transition-colors">
+              <button onClick={handleShare} className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-gray-600 transition-colors">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
                   <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
                 </svg>
-                Share
+                {copied ? 'Copied!' : 'Share'}
               </button>
             </div>
           </article>
@@ -160,8 +174,8 @@ export default function ThreadView({ postId }: ThreadViewProps) {
             {relatedPosts.length > 0 ? (
               <div className="space-y-3">
                 {relatedPosts.map((related) => {
-                  const rNickname = related.profile?.nickname ?? 'Anonymous';
-                  const rColor = related.profile?.color ?? '#9CA3AF';
+                  const rNickname = related.author_nickname ?? 'Anonymous';
+                  const rColor = related.author_color ?? '#9CA3AF';
                   return (
                     <Link
                       key={related.id}

@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Link from 'next/link';
 import type { CommunityPost as CommunityPostType } from '@/types/community';
 import { getCategoryLabel, getCategoryEmoji, timeAgo } from '@/lib/utils';
@@ -10,10 +13,24 @@ interface CommunityPostProps {
 }
 
 export default function CommunityPost({ post }: CommunityPostProps) {
+  const [copied, setCopied] = useState(false);
   const emoji = getCategoryEmoji(post.category as Category);
   const categoryLabel = getCategoryLabel(post.category as Category);
-  const nickname = post.profile?.nickname ?? 'Anonymous';
-  const color = post.profile?.color ?? '#9CA3AF';
+  const nickname = post.author_nickname ?? 'Anonymous';
+  const color = post.author_color ?? '#9CA3AF';
+
+  const handleShare = async () => {
+    const url = `${window.location.origin}/community?post=${post.id}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: post.title, url });
+        return;
+      } catch { /* user cancelled or not supported */ }
+    }
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <article className="py-5 px-1">
@@ -67,12 +84,12 @@ export default function CommunityPost({ post }: CommunityPostProps) {
           <span>View</span>
         </Link>
 
-        <button className="flex items-center gap-1.5 hover:text-gray-600 transition-colors" aria-label="Share">
+        <button onClick={handleShare} className="flex items-center gap-1.5 hover:text-gray-600 transition-colors" aria-label="Share">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
             <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
           </svg>
-          <span>Share</span>
+          <span>{copied ? 'Copied!' : 'Share'}</span>
         </button>
       </div>
     </article>

@@ -1,3 +1,15 @@
+/**
+ * OAuth callback handler — processes redirects from Google, Apple, or email link.
+ *
+ * Supports two flows:
+ * 1. Implicit flow — tokens in URL hash (#access_token=...&refresh_token=...)
+ * 2. PKCE flow — authorization code in query params (?code=...)
+ *
+ * Both Google and Apple OAuth redirects land here after Supabase processes
+ * the provider callback. This page extracts credentials, sets the session,
+ * and redirects to home.
+ */
+
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -50,10 +62,10 @@ export default function AuthCallbackPage() {
           <p className="text-red-500 font-semibold mb-2">Sign-in failed</p>
           <p className="text-gray-500 text-sm mb-4">{error}</p>
           <a
-            href="/"
+            href="/auth"
             className="inline-block bg-teal-primary hover:bg-teal-dark text-white font-semibold px-6 py-2.5 rounded-full transition-colors"
           >
-            Back to home
+            Try again
           </a>
         </div>
       </div>

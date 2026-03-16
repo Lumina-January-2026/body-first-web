@@ -1,5 +1,13 @@
+/**
+ * JoinCard — sidebar CTA for authentication or profile display.
+ *
+ * Shows profile avatar + nickname if authenticated.
+ * Shows sign-in CTA with link to /auth page if not authenticated.
+ */
+
 'use client';
 
+import Link from 'next/link';
 import { useProfile } from './ProfileContext';
 import { getInitial } from '@/lib/profile';
 
@@ -8,9 +16,9 @@ interface JoinCardProps {
 }
 
 export default function JoinCard({ onJoinClick }: JoinCardProps) {
-  const { profile } = useProfile();
+  const { profile, isAuthenticated } = useProfile();
 
-  if (profile) {
+  if (isAuthenticated && profile) {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
         <div className="p-5 text-center">
@@ -41,14 +49,14 @@ export default function JoinCard({ onJoinClick }: JoinCardProps) {
       <div className="p-5 text-center">
         <h3 className="text-lg font-bold text-gray-900 mb-2">Join The Conversation</h3>
         <p className="text-sm text-gray-500 mb-4 leading-relaxed">
-          Create a free anonymous profile to post, comment, and react in the community.
+          Sign in to post, comment, and connect with the community.
         </p>
-        <button
-          onClick={onJoinClick}
-          className="w-full bg-teal-primary hover:bg-teal-dark text-white font-semibold py-3 px-6 rounded-xl transition-colors"
+        <Link
+          href="/auth"
+          className="block w-full bg-teal-primary hover:bg-teal-dark text-white font-semibold py-3 px-6 rounded-xl transition-colors text-center"
         >
-          Create Profile
-        </button>
+          Sign In
+        </Link>
       </div>
     </div>
   );

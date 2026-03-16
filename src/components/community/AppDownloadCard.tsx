@@ -29,14 +29,7 @@ export default function AppDownloadCard() {
       </div>
 
       {/* Store badges */}
-      <div className="flex items-center justify-center gap-3 mt-4">
-        <div className="bg-white/10 hover:bg-white/20 transition-colors rounded-lg px-4 py-2 text-xs font-medium">
-          App Store
-        </div>
-        <div className="bg-white/10 hover:bg-white/20 transition-colors rounded-lg px-4 py-2 text-xs font-medium">
-          Google Play
-        </div>
-      </div>
+      <p className="text-xs text-gray-400 mt-4">Coming soon to App Store & Google Play</p>
     </div>
   );
 }
