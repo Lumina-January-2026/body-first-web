@@ -31,7 +31,7 @@ export default function AuthCallbackPage() {
           if (err) {
             setError(err.message);
           } else {
-            window.location.href = '/';
+            window.location.href = '/community';
           }
         });
       return;
@@ -46,7 +46,7 @@ export default function AuthCallbackPage() {
         if (err) {
           setError(err.message);
         } else {
-          window.location.href = '/';
+          window.location.href = '/community';
         }
       });
       return;

@@ -91,12 +91,16 @@ export default function AuthPage() {
             onClick={async () => {
               setError(null);
               setLoading(true);
-              const result = await signIn('google');
-              // If signIn returns without redirect, there was an error
-              if (result && !result.success) {
-                setError(result.error ?? 'Could not connect to Google. Please try again.');
+              try {
+                const result = await signIn('google');
+                if (result && !result.success) {
+                  setError(result.error ?? 'Could not connect to Google. Please try again.');
+                }
+              } catch {
+                setError('Something went wrong. Please try again.');
+              } finally {
+                setLoading(false);
               }
-              setLoading(false);
             }}
             disabled={loading}
             className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50"
@@ -114,11 +118,16 @@ export default function AuthPage() {
             onClick={async () => {
               setError(null);
               setLoading(true);
-              const result = await signIn('apple');
-              if (result && !result.success) {
-                setError(result.error ?? 'Could not connect to Apple. Please try again.');
+              try {
+                const result = await signIn('apple');
+                if (result && !result.success) {
+                  setError(result.error ?? 'Could not connect to Apple. Please try again.');
+                }
+              } catch {
+                setError('Something went wrong. Please try again.');
+              } finally {
+                setLoading(false);
               }
-              setLoading(false);
             }}
             disabled={loading}
             className="w-full flex items-center justify-center gap-3 px-4 py-3 rounded-xl border border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50"

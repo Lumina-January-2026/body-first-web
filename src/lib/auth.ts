@@ -16,35 +16,57 @@ import type { Session, User } from '@supabase/supabase-js';
 // ── OAuth Providers ──
 
 export async function signInWithGoogle(): Promise<AuthResult> {
-  const redirectTo = typeof window !== 'undefined'
-    ? `${window.location.origin}/auth/callback`
-    : undefined;
+  try {
+    const redirectTo = typeof window !== 'undefined'
+      ? `${window.location.origin}/auth/callback`
+      : undefined;
 
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: 'google',
-    options: { redirectTo },
-  });
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo,
+        skipBrowserRedirect: true,
+      },
+    });
 
-  if (error) {
-    return { success: false, error: error.message };
+    if (error) return { success: false, error: error.message };
+
+    if (data?.url) {
+      window.location.href = data.url;
+      return { success: true };
+    }
+
+    return { success: false, error: 'No OAuth URL returned. Please try again.' };
+  } catch (err) {
+    return { success: false, error: err instanceof Error ? err.message : 'Google sign-in failed' };
   }
-  return { success: true };
 }
 
 export async function signInWithApple(): Promise<AuthResult> {
-  const redirectTo = typeof window !== 'undefined'
-    ? `${window.location.origin}/auth/callback`
-    : undefined;
+  try {
+    const redirectTo = typeof window !== 'undefined'
+      ? `${window.location.origin}/auth/callback`
+      : undefined;
 
-  const { error } = await supabase.auth.signInWithOAuth({
-    provider: 'apple',
-    options: { redirectTo },
-  });
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: 'apple',
+      options: {
+        redirectTo,
+        skipBrowserRedirect: true,
+      },
+    });
 
-  if (error) {
-    return { success: false, error: error.message };
+    if (error) return { success: false, error: error.message };
+
+    if (data?.url) {
+      window.location.href = data.url;
+      return { success: true };
+    }
+
+    return { success: false, error: 'No OAuth URL returned. Please try again.' };
+  } catch (err) {
+    return { success: false, error: err instanceof Error ? err.message : 'Apple sign-in failed' };
   }
-  return { success: true };
 }
 
 // ── Email/Password Auth ──
