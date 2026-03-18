@@ -12,7 +12,7 @@ function getSupabase(): SupabaseClient | null {
 
   cached = createClient(url, key, {
     auth: {
-      flowType: 'pkce',
+      flowType: 'implicit',
       detectSessionInUrl: true,
     },
   });

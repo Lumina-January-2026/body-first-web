@@ -1,13 +1,10 @@
 /**
  * OAuth callback handler — processes redirects from Google, Apple, or email link.
  *
- * Supports two flows:
- * 1. Implicit flow — tokens in URL hash (#access_token=...&refresh_token=...)
- * 2. PKCE flow — authorization code in query params (?code=...)
- *
- * Both Google and Apple OAuth redirects land here after Supabase processes
- * the provider callback. This page extracts credentials, sets the session,
- * and redirects to home.
+ * Uses implicit flow: Supabase returns tokens in the URL hash fragment
+ * (#access_token=...&refresh_token=...). The client auto-detects them via
+ * detectSessionInUrl: true and fires onAuthStateChange. This page waits for
+ * that event, then redirects to /community.
  */
 
 'use client';
@@ -19,40 +16,29 @@ export default function AuthCallbackPage() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const hash = window.location.hash;
-    const params = new URLSearchParams(hash.replace('#', '?'));
-    const accessToken = params.get('access_token');
-    const refreshToken = params.get('refresh_token');
+    // The Supabase client with detectSessionInUrl: true will automatically
+    // pick up tokens from the hash fragment. Listen for the session event.
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      if (session) {
+        window.location.href = '/community';
+      }
+    });
 
-    if (accessToken && refreshToken) {
-      supabase.auth
-        .setSession({ access_token: accessToken, refresh_token: refreshToken })
-        .then(({ error: err }) => {
-          if (err) {
-            setError(err.message);
-          } else {
-            window.location.href = '/community';
-          }
-        });
-      return;
-    }
+    // Fallback: if no auth event fires within 5s, check for an existing session
+    // (tokens may have already been processed before the listener was set up)
+    const timeout = setTimeout(async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session) {
+        window.location.href = '/community';
+      } else {
+        setError('No authentication credentials found. Please try signing in again.');
+      }
+    }, 5000);
 
-    // PKCE flow: code is in query params
-    const url = new URL(window.location.href);
-    const code = url.searchParams.get('code');
-
-    if (code) {
-      supabase.auth.exchangeCodeForSession(code).then(({ error: err }) => {
-        if (err) {
-          setError(err.message);
-        } else {
-          window.location.href = '/community';
-        }
-      });
-      return;
-    }
-
-    setError('No authentication credentials found in the URL.');
+    return () => {
+      subscription.unsubscribe();
+      clearTimeout(timeout);
+    };
   }, []);
 
   if (error) {
