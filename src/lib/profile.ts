@@ -70,11 +70,16 @@ export async function fetchProfileByUserId(userId: string): Promise<CommunityPro
   }
 }
 
+export interface UpsertProfileResult {
+  profile: CommunityProfile | null;
+  error?: string;
+}
+
 export async function upsertProfileForUser(
   userId: string,
   nickname: string,
   color: string,
-): Promise<CommunityProfile | null> {
+): Promise<UpsertProfileResult> {
   const { data, error } = await supabase
     .from('community_profiles')
     .upsert(
@@ -84,10 +89,15 @@ export async function upsertProfileForUser(
     .select('*')
     .single();
 
-  if (error || !data) return null;
+  if (error) {
+    console.error('upsertProfileForUser error:', error.message);
+    return { profile: null, error: error.message };
+  }
+  if (!data) return { profile: null, error: 'No profile returned' };
+
   const profile = data as CommunityProfile;
   cacheProfile(profile);
-  return profile;
+  return { profile };
 }
 
 export function getInitial(nickname: string): string {

@@ -52,6 +52,7 @@ interface ProfileContextValue {
   /** Verify OTP code from email confirmation */
   verifyEmailOTP: (email: string, token: string) => Promise<AuthResult>;
   saveProfile: (nickname: string, color: string) => Promise<void>;
+  profileError: string | null;
   showProfileModal: boolean;
   openProfileModal: () => void;
   closeProfileModal: () => void;
@@ -70,6 +71,7 @@ const ProfileCtx = createContext<ProfileContextValue>({
   signInEmail: async () => ({ success: false }),
   verifyEmailOTP: async () => ({ success: false }),
   saveProfile: async () => {},
+  profileError: null,
   showProfileModal: false,
   openProfileModal: () => {},
   closeProfileModal: () => {},
@@ -85,6 +87,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [needsProfile, setNeedsProfile] = useState(false);
+  const [profileError, setProfileError] = useState<string | null>(null);
 
   // Load cached profile immediately for fast UI
   useEffect(() => {
@@ -143,12 +146,15 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
 
   const handleSave = useCallback(async (nickname: string, color: string) => {
     if (!user) return;
-    const result = await upsertProfileForUser(user.id, nickname, color);
+    setProfileError(null);
+    const { profile: result, error } = await upsertProfileForUser(user.id, nickname, color);
     if (result) {
       setProfile(result);
       setNeedsProfile(false);
+      setShowProfileModal(false);
+    } else {
+      setProfileError(error ?? 'Failed to create profile. Please try again.');
     }
-    setShowProfileModal(false);
   }, [user]);
 
   const handleSignIn = useCallback(async (method: AuthMethod = 'google'): Promise<AuthResult | void> => {
@@ -199,6 +205,7 @@ export function ProfileProvider({ children }: { children: React.ReactNode }) {
         signInEmail: handleSignInEmail,
         verifyEmailOTP: handleVerifyOTP,
         saveProfile: handleSave,
+        profileError,
         showProfileModal,
         openProfileModal: () => {
           if (!user) {

@@ -10,7 +10,7 @@ interface JoinModalProps {
 }
 
 export default function JoinModal({ open, onClose }: JoinModalProps) {
-  const { profile, saveProfile } = useProfile();
+  const { profile, saveProfile, profileError } = useProfile();
   const [nickname, setNickname] = useState('');
   const [color, setColor] = useState(PROFILE_COLORS[0]);
 
@@ -129,6 +129,11 @@ export default function JoinModal({ open, onClose }: JoinModalProps) {
                 ))}
               </div>
             </div>
+
+            {/* Error */}
+            {profileError && (
+              <p className="text-sm text-red-500 text-center">{profileError}</p>
+            )}
 
             {/* Submit */}
             <button
