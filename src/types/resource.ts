@@ -122,12 +122,12 @@ export const COMMUNITY_NAV: CommunityNavSection[] = [
   {
     heading: 'TOPICS',
     items: [
-      { emoji: '\u{1F915}', label: 'Side Effects', filter: { type: 'category', value: 'side-effects' } },
-      { emoji: '\u{1F4B0}', label: 'Cost & Savings', filter: { type: 'category', value: 'cost-savings' } },
-      { emoji: '\u{1F680}', label: 'Getting Started', filter: { type: 'category', value: 'getting-started' } },
-      { emoji: '\u{1F957}', label: 'Food & Nutrition', filter: { type: 'category', value: 'lifestyle-nutrition' } },
-      { emoji: '\u{1F389}', label: 'Wins & Milestones', filter: { type: 'category', value: 'real-stories' } },
-      { emoji: '\u{1F9E0}', label: 'Mental Health', filter: { type: 'category', value: 'mental-emotional' } },
+      { emoji: '\u{1F389}', label: 'Wins', filter: { type: 'category', value: 'Wins' } },
+      { emoji: '\u{1F915}', label: 'Side Effects', filter: { type: 'category', value: 'Side Effects' } },
+      { emoji: '\u{1F4B0}', label: 'Cost & Insurance', filter: { type: 'category', value: 'Cost & Insurance' } },
+      { emoji: '\u{1F4A1}', label: 'Tips', filter: { type: 'category', value: 'Tips' } },
+      { emoji: '\u{2753}', label: 'Questions', filter: { type: 'category', value: 'Questions' } },
+      { emoji: '\u{1F4AC}', label: 'General', filter: { type: 'category', value: 'General' } },
     ],
   },
   {
@@ -138,3 +138,15 @@ export const COMMUNITY_NAV: CommunityNavSection[] = [
     ],
   },
 ];
+
+/** Categories used by community posts (matches agent system). */
+export const COMMUNITY_CATEGORIES = [
+  'Wins',
+  'Side Effects',
+  'Cost & Insurance',
+  'Tips',
+  'Questions',
+  'General',
+] as const;
+
+export type CommunityCategory = (typeof COMMUNITY_CATEGORIES)[number];

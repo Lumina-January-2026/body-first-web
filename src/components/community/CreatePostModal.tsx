@@ -9,8 +9,8 @@
 import { useState, useEffect } from 'react';
 import { useProfile } from './ProfileContext';
 import { createPost } from '@/lib/community';
-import { CATEGORIES, MEDICATIONS, CATEGORY_LABELS, MEDICATION_LABELS } from '@/types/resource';
-import type { Category, Medication } from '@/types/resource';
+import { COMMUNITY_CATEGORIES, MEDICATIONS, MEDICATION_LABELS } from '@/types/resource';
+import type { CommunityCategory, Medication } from '@/types/resource';
 
 interface CreatePostModalProps {
   open: boolean;
@@ -22,7 +22,7 @@ export default function CreatePostModal({ open, onClose, onPostCreated }: Create
   const { profile, user, openProfileModal } = useProfile();
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
-  const [category, setCategory] = useState<Category>('real-stories');
+  const [category, setCategory] = useState<CommunityCategory>('General');
   const [medications, setMedications] = useState<Medication[]>([]);
   const [submitting, setSubmitting] = useState(false);
 
@@ -61,7 +61,7 @@ export default function CreatePostModal({ open, onClose, onPostCreated }: Create
     if (post) {
       setTitle('');
       setBody('');
-      setCategory('real-stories');
+      setCategory('General');
       setMedications([]);
       onPostCreated();
       onClose();
@@ -131,12 +131,12 @@ export default function CreatePostModal({ open, onClose, onPostCreated }: Create
               <select
                 id="post-category"
                 value={category}
-                onChange={(e) => setCategory(e.target.value as Category)}
+                onChange={(e) => setCategory(e.target.value as CommunityCategory)}
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 text-gray-900 focus:ring-2 focus:ring-teal-primary/30 focus:border-teal-primary focus:outline-none transition-all bg-white"
               >
-                {CATEGORIES.map((cat) => (
+                {COMMUNITY_CATEGORIES.map((cat) => (
                   <option key={cat} value={cat}>
-                    {CATEGORY_LABELS[cat]}
+                    {cat}
                   </option>
                 ))}
               </select>
