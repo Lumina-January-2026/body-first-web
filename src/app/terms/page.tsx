@@ -179,7 +179,55 @@ export default function TermsPage() {
             </ul>
 
             {/* Section 9 */}
-            <h2>9. Intellectual Property</h2>
+            <h2>9. Community Guidelines &amp; User-Generated Content</h2>
+            <p>
+              Body First includes an anonymous Community feature where users can post, comment, and interact
+              with other members.
+            </p>
+
+            <h3>Eligibility</h3>
+            <p>You must be 18 years or older to use the Community feature.</p>
+
+            <h3>Zero Tolerance Policy</h3>
+            <p>
+              Body First has a zero tolerance policy for objectionable content or abusive users.
+              The following are prohibited:
+            </p>
+            <ul>
+              <li>Hate speech, discrimination, or harassment of any kind</li>
+              <li>Threats of violence or encouragement of self-harm</li>
+              <li>Sexually explicit or suggestive content</li>
+              <li>Spam, scams, or commercial solicitation</li>
+              <li>Illegal activity or content promoting illegal activity</li>
+              <li>Personal information of others (doxxing)</li>
+              <li>Misinformation about medications presented as medical advice</li>
+              <li>Any content that violates applicable laws</li>
+            </ul>
+
+            <h3>Enforcement</h3>
+            <p>Body First reserves the right to, at its sole discretion:</p>
+            <ul>
+              <li>Remove any content that violates these guidelines</li>
+              <li>Permanently ban users who post objectionable content</li>
+              <li>Act on all reports within 24 hours of receipt</li>
+              <li>Cooperate with law enforcement when required</li>
+            </ul>
+
+            <h3>Reporting</h3>
+            <p>
+              If you encounter objectionable content or abusive behavior, you can report it through the
+              in-app reporting feature (available on every post and comment) or by
+              emailing <a href="mailto:support@bodyfirst.app">support@bodyfirst.app</a>.
+            </p>
+
+            <h3>Content Ownership</h3>
+            <p>
+              By posting in the Community, you grant Body First a non-exclusive license to display your
+              content within the app. You retain ownership of your content and can delete it at any time.
+            </p>
+
+            {/* Section 10 */}
+            <h2>10. Intellectual Property</h2>
             <p>
               All content, features, and functionality of the Services — including text, graphics, logos, icons,
               images, software, and the arrangement thereof — are owned by Boolean Bliss LLC and are protected by
@@ -190,8 +238,8 @@ export default function TermsPage() {
               trademarks without our prior written consent.
             </p>
 
-            {/* Section 10 */}
-            <h2>10. Third-Party Services</h2>
+            {/* Section 11 */}
+            <h2>11. Third-Party Services</h2>
             <p>
               The Services rely on third-party infrastructure and service providers, including but not limited to
               Supabase (database and backend), RevenueCat (subscription management), and the Apple App Store and
@@ -206,8 +254,8 @@ export default function TermsPage() {
               content, accuracy, or practices of any third-party websites and do not endorse them.
             </p>
 
-            {/* Section 11 */}
-            <h2>11. Disclaimers</h2>
+            {/* Section 12 */}
+            <h2>12. Disclaimers</h2>
             <p>
               <strong>THE SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER
               EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
@@ -221,8 +269,8 @@ export default function TermsPage() {
               <li>Any defects in the Services will be corrected</li>
             </ul>
 
-            {/* Section 12 */}
-            <h2>12. Limitation of Liability</h2>
+            {/* Section 13 */}
+            <h2>13. Limitation of Liability</h2>
             <p>
               <strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, BOOLEAN BLISS LLC AND ITS OFFICERS, DIRECTORS,
               EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR
@@ -239,8 +287,8 @@ export default function TermsPage() {
               or health-related consequences resulting from your use of or reliance on content provided through the Services.</strong>
             </p>
 
-            {/* Section 13 */}
-            <h2>13. Indemnification</h2>
+            {/* Section 14 */}
+            <h2>14. Indemnification</h2>
             <p>
               You agree to indemnify, defend, and hold harmless Boolean Bliss LLC and its officers, directors,
               employees, agents, and affiliates from and against any claims, liabilities, damages, losses, costs,
@@ -249,8 +297,8 @@ export default function TermsPage() {
               or (d) any medical or health decisions you make based on content from the Services.
             </p>
 
-            {/* Section 14 */}
-            <h2>14. Governing Law and Dispute Resolution</h2>
+            {/* Section 15 */}
+            <h2>15. Governing Law and Dispute Resolution</h2>
             <p>
               These Terms shall be governed by and construed in accordance with the laws of the State of Delaware,
               United States, without regard to its conflict of law provisions.
@@ -270,8 +318,8 @@ export default function TermsPage() {
               jurisdiction and venue shall be the state and federal courts located in the State of Delaware.
             </p>
 
-            {/* Section 15 */}
-            <h2>15. Termination</h2>
+            {/* Section 16 */}
+            <h2>16. Termination</h2>
             <p>
               We may suspend or terminate your access to the Services at any time, with or without cause, and with
               or without notice. Grounds for termination include, but are not limited to, violation of these Terms,
@@ -280,23 +328,23 @@ export default function TermsPage() {
             <p>
               Upon termination: (a) your license to use the Services will immediately cease, (b) you must stop all
               use of the Services, and (c) provisions that by their nature should survive termination (including
-              Sections 3, 9, 11, 12, 13, and 14) shall continue to apply.
+              Sections 3, 9, 10, 12, 13, 14, and 15) shall continue to apply.
             </p>
             <p>
               If you have an active subscription at the time of termination for cause (your violation of these Terms),
               you will not be entitled to a refund for the remaining subscription period.
             </p>
 
-            {/* Section 16 */}
-            <h2>16. Severability</h2>
+            {/* Section 17 */}
+            <h2>17. Severability</h2>
             <p>
               If any provision of these Terms is found to be unenforceable or invalid by a court of competent
               jurisdiction, that provision will be enforced to the maximum extent permissible, and the remaining
               provisions will continue in full force and effect.
             </p>
 
-            {/* Section 17 */}
-            <h2>17. Changes to These Terms</h2>
+            {/* Section 18 */}
+            <h2>18. Changes to These Terms</h2>
             <p>
               We may update these Terms from time to time. When we make material changes, we will post the updated
               Terms on this page with a new effective date and, where appropriate, notify you through an in-app
@@ -307,8 +355,8 @@ export default function TermsPage() {
               If you do not agree to the changes, you must stop using the Services and may delete your account.
             </p>
 
-            {/* Section 18 */}
-            <h2>18. Contact Us</h2>
+            {/* Section 19 */}
+            <h2>19. Contact Us</h2>
             <p>If you have questions or concerns about these Terms, please contact us:</p>
             <ul>
               <li><strong>Boolean Bliss LLC</strong></li>
