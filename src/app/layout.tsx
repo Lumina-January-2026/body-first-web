@@ -30,6 +30,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.className}>
+      <head>
+        <meta name="facebook-domain-verification" content="iharyripeb4kd32i5lhq5art1i3n22" />
+      </head>
       <body className="min-h-screen bg-brand-bg">
         <ProfileProvider>
           <Header />
