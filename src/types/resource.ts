@@ -33,6 +33,8 @@ export const MEDICATIONS = [
   'wegovy',
   'mounjaro',
   'zepbound',
+  'saxenda',
+  'rybelsus',
   'oral-semaglutide',
   'general',
 ] as const;
@@ -92,6 +94,8 @@ export const MEDICATION_LABELS: Record<Medication, string> = {
   wegovy: 'Wegovy',
   mounjaro: 'Mounjaro',
   zepbound: 'Zepbound',
+  saxenda: 'Saxenda',
+  rybelsus: 'Rybelsus',
   'oral-semaglutide': 'Oral Semaglutide',
   general: 'General',
 };
@@ -117,6 +121,8 @@ export const COMMUNITY_NAV: CommunityNavSection[] = [
       { emoji: '\u{1F52C}', label: 'Mounjaro', filter: { type: 'medication', value: 'mounjaro' } },
       { emoji: '\u{26A1}', label: 'Zepbound', filter: { type: 'medication', value: 'zepbound' } },
       { emoji: '\u{1F48A}', label: 'Oral Semaglutide', filter: { type: 'medication', value: 'oral-semaglutide' } },
+      { emoji: '\u{1F4A7}', label: 'Saxenda', filter: { type: 'medication', value: 'saxenda' } },
+      { emoji: '\u{1F48A}', label: 'Rybelsus', filter: { type: 'medication', value: 'rybelsus' } },
     ],
   },
   {

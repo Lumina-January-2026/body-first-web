@@ -59,6 +59,8 @@ const MEDICATION_EMOJIS: Record<Medication, string> = {
   'wegovy': '\u{1F489}',
   'mounjaro': '\u{1F52C}',
   'zepbound': '\u{26A1}',
+  'saxenda': '\u{1F4A7}',
+  'rybelsus': '\u{1F48A}',
   'oral-semaglutide': '\u{1F48A}',
   'general': '\u{1F30D}',
 };

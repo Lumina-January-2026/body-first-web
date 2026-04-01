@@ -15,8 +15,8 @@ export default function AppDownloadCTABanner() {
               supportive community — all in one app. Your journey, your pace.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-              <Button href="/get-started" size="lg">
-                Get Started Free
+              <Button href="https://apps.apple.com/us/app/body-first/id6757570268" size="lg">
+                Download on App Store
               </Button>
               <Button
                 href="/resources"

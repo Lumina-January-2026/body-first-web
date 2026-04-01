@@ -159,11 +159,11 @@ export default function GetStartedPage() {
               ))}
             </ul>
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button href="#contact" size="lg" className="!bg-nav-dark !text-white hover:!bg-gray-800">
-                App Store &mdash; Coming Soon
+              <Button href="https://apps.apple.com/us/app/body-first/id6757570268" size="lg" className="!bg-nav-dark !text-white hover:!bg-gray-800">
+                Download on App Store
               </Button>
-              <Button href="#contact" size="lg" className="!bg-nav-dark !text-white hover:!bg-gray-800">
-                Google Play &mdash; Coming Soon
+              <Button href="#contact" variant="outline" size="lg">
+                Contact Us
               </Button>
             </div>
           </div>

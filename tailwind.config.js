@@ -61,7 +61,7 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ['var(--font-montserrat)', 'var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['var(--font-dm-sans)', 'var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
       },
 
       fontSize: {

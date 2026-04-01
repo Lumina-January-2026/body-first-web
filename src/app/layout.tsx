@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
-import { Montserrat, Inter } from 'next/font/google';
+import { DM_Sans, Inter } from 'next/font/google';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { ProfileProvider } from '@/components/community/ProfileContext';
 import './globals.css';
 
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' });
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' });
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
+    <html lang="en" className={`${dmSans.variable} ${inter.variable}`}>
       <head>
         <meta name="facebook-domain-verification" content="iharyripeb4kd32i5lhq5art1i3n22" />
       </head>

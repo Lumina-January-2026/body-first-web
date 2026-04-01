@@ -43,6 +43,14 @@ export default function Button({
   const classes = `inline-flex items-center justify-center rounded-brand-pill font-semibold transition-all duration-200 ${variants[variant]} ${sizes[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : 'active:scale-[0.98]'} ${fullWidth ? 'w-full' : ''} ${className}`;
 
   if (href) {
+    const isExternal = href.startsWith('http');
+    if (isExternal) {
+      return (
+        <a href={href} className={classes} target="_blank" rel="noopener noreferrer">
+          {children}
+        </a>
+      );
+    }
     return (
       <Link href={href} className={classes}>
         {children}
