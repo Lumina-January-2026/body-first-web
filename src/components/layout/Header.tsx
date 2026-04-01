@@ -13,6 +13,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import Navigation from './Navigation';
 import JoinModal from '@/components/community/JoinModal';
@@ -59,15 +60,15 @@ export default function Header() {
       <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
         <div className="max-w-[1440px] mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-7 h-7 text-teal-primary">
-              <svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"/>
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-gray-900 tracking-tight">
-              Body First
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/body-first-logo.png"
+              alt="Body First"
+              width={140}
+              height={32}
+              className="h-8 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop actions */}

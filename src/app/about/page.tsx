@@ -69,7 +69,7 @@ export default function AboutPage() {
               <div className="aspect-[4/3] w-full rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-teal-primary/10 to-peach-start flex items-center justify-center">
                 <div className="text-center p-8">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-white shadow-xl flex items-center justify-center">
-                    <svg width="48" height="48" fill="#14B8A6" viewBox="0 0 48 48">
+                    <svg width="48" height="48" fill="#1E3054" viewBox="0 0 48 48">
                       <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"/>
                     </svg>
                   </div>

@@ -30,8 +30,10 @@ module.exports = {
           end: tokens.colors.peachGradientEnd,         // #FFF5F0
         },
         teal: {
-          primary: tokens.colors.tealPrimary,          // #14B8A6 (accent only)
-          dark: tokens.colors.tealDark,                // #0D9488
+          primary: tokens.colors.tealPrimary,          // #1E3054 (navy blue)
+          dark: tokens.colors.tealDark,                // #162440
+          50: '#E8EDF5',                               // light navy tint
+          700: '#1E3054',                              // navy for badge text
         },
         coral: tokens.colors.coralAccent,              // #F97316
         nav: {
@@ -48,7 +50,7 @@ module.exports = {
 
         /* ── Web overrides (from Figma, do NOT change design-tokens.json) ── */
         brand: {
-          blue: '#244489',     // Figma header blue
+          blue: '#1E3054',     // Navy blue (matches logo)
           bg: '#FAFAFA',       // Figma page background
           dark: '#111827',     // Figma primary button
           gray: '#6B7280',     // Figma body text
@@ -59,7 +61,7 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: tokens.typography.fontFamily.web.split(', '),
+        sans: ['var(--font-montserrat)', 'var(--font-inter)', 'system-ui', '-apple-system', 'sans-serif'],
       },
 
       fontSize: {
