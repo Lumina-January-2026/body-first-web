@@ -129,7 +129,7 @@ export default function GetStartedPage() {
       <section className="w-full border-y border-gray-100 bg-white py-12">
         <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-8 px-6">
           {trustStats.map((item) => (
-            <div key={item.label} className="flex flex-1 min-w-[200px] flex-col items-center gap-1 text-center">
+            <div key={item.label} className="flex flex-1 min-w-[140px] sm:min-w-[200px] flex-col items-center gap-1 text-center">
               <p className="text-3xl font-bold tracking-tight text-gray-900">{item.stat}</p>
               <p className="text-sm font-medium text-gray-500">{item.label}</p>
             </div>
@@ -184,14 +184,14 @@ export default function GetStartedPage() {
       </section>
 
       {/* Contact Form */}
-      <section id="contact" className="relative bg-peach-start/30 py-20 px-6">
+      <section id="contact" className="relative bg-peach-start/30 py-12 md:py-20 px-4 md:px-6">
         <div className="mx-auto max-w-[800px]">
           <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
-            <div className="border-b border-gray-100 bg-white p-8 text-center">
+            <div className="border-b border-gray-100 bg-white p-5 md:p-8 text-center">
               <h2 className="text-3xl font-bold text-gray-900">Get in Touch</h2>
               <p className="mt-2 text-gray-500">Have questions? We&apos;re here to help.</p>
             </div>
-            <div className="p-8">
+            <div className="p-4 md:p-8">
               <ContactForm />
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function GetStartedPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-peach-start/30 pb-20 px-6">
+      <section className="bg-peach-start/30 pb-12 md:pb-20 px-4 md:px-6">
         <div className="mx-auto max-w-[800px]">
           <h2 className="mb-10 text-center text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
           <div className="flex flex-col gap-4">

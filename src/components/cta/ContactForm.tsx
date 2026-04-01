@@ -36,7 +36,7 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-white rounded-2xl shadow-card p-8 text-center">
+      <div className="bg-white rounded-2xl shadow-card p-4 md:p-8 text-center">
         <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-teal-50 flex items-center justify-center">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-teal-primary">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
@@ -51,7 +51,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-card p-8">
+    <div className="bg-white rounded-2xl shadow-card p-4 md:p-8">
       <h3 className="text-xl font-bold text-gray-900 mb-1">Get in Touch</h3>
       <p className="text-sm text-gray-500 mb-6">We&apos;d love to hear from you. No pressure, ever.</p>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">

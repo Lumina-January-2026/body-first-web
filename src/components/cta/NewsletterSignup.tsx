@@ -38,7 +38,7 @@ export default function NewsletterSignup() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
       <input
         type="email"
         required

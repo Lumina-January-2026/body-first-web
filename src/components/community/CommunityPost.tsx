@@ -34,7 +34,7 @@ export default function CommunityPost({ post }: CommunityPostProps) {
 
   return (
     <article className="py-5 px-1">
-      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+      <div className="flex items-center flex-wrap gap-x-2 gap-y-1 text-sm text-gray-500 mb-2">
         <div
           className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
           style={{ backgroundColor: color }}

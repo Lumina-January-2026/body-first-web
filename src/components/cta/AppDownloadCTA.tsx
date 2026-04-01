@@ -2,7 +2,7 @@ import Button from '@/components/common/Button';
 
 export default function AppDownloadCTA() {
   return (
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-nav-dark to-[#2a2a3d] p-8 md:p-12">
+    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-nav-dark to-[#2a2a3d] p-5 md:p-12">
       {/* Decorative circles */}
       <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-teal-primary/10" />
       <div className="absolute -bottom-6 -left-6 w-24 h-24 rounded-full bg-coral/10" />

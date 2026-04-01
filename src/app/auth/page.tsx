@@ -66,7 +66,7 @@ export default function AuthPage() {
     <div className="min-h-[80vh] flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card max-w-md w-full overflow-hidden">
         {/* Header */}
-        <div className="p-8 pb-0 text-center">
+        <div className="p-5 md:p-8 pb-0 text-center">
           <Link href="/" className="inline-flex items-center gap-2 mb-6 group">
             <div className="w-6 h-6 text-teal-primary">
               <svg fill="currentColor" viewBox="0 0 48 48">
@@ -85,7 +85,7 @@ export default function AuthPage() {
           </p>
         </div>
 
-        <div className="p-8 pt-4 space-y-4">
+        <div className="p-5 md:p-8 pt-4 space-y-4">
           {/* OAuth buttons */}
           <button
             onClick={async () => {

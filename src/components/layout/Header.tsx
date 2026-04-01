@@ -86,7 +86,7 @@ export default function Header() {
               <div className="relative">
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold transition-opacity hover:opacity-80"
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-white text-sm font-bold transition-opacity hover:opacity-80"
                   style={{ backgroundColor: profile.color }}
                   aria-label="Profile menu"
                 >
@@ -124,7 +124,7 @@ export default function Header() {
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
+            className="md:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg text-gray-600 hover:bg-gray-100 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >

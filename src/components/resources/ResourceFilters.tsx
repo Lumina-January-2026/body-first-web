@@ -22,7 +22,7 @@ export default function ResourceFilters({ resources }: ResourceFiltersProps) {
   }, [resources, selectedCategory, selectedMedication]);
 
   const pillBase =
-    'px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap border';
+    'px-4 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer whitespace-nowrap border';
   const pillActive =
     'bg-teal-primary text-white border-teal-primary shadow-md';
   const pillInactive =
