@@ -48,6 +48,13 @@ module.exports = {
         },
         'side-effects-blue': tokens.colors.sideEffectsBlue, // #1E3A5F
 
+        /* ── Showcase page palette (about/landing page true-teal CTAs) ── */
+        showcase: {
+          teal: '#0D9488',
+          'teal-dark': '#0F766E',
+          bg: '#FFF9F5',
+        },
+
         /* ── Web overrides (from Figma, do NOT change design-tokens.json) ── */
         brand: {
           blue: '#1E3054',     // Navy blue (matches logo)
