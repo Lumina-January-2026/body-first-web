@@ -1,12 +1,14 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import type { CommunityPost } from '@/types/community';
 import { fetchPostById, fetchPosts } from '@/lib/community';
 import { getCategoryLabel, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
 import type { Category } from '@/types/resource';
 import { getInitial } from '@/lib/profile';
+import { supabase } from '@/lib/supabase';
+import { useProfile } from './ProfileContext';
 
 function Avatar({ nickname, color, size = 'md' }: { nickname: string; color: string; size?: 'sm' | 'md' }) {
   const sizeClasses = size === 'sm' ? 'w-8 h-8 text-xs' : 'w-10 h-10 text-sm';
@@ -24,11 +26,49 @@ interface ThreadViewProps {
   postId: string;
 }
 
+interface Comment {
+  id: string;
+  body: string;
+  created_at: string;
+  user_id: string;
+  nickname?: string;
+  color?: string;
+}
+
 export default function ThreadView({ postId }: ThreadViewProps) {
+  const { profile, user } = useProfile();
   const [post, setPost] = useState<CommunityPost | null>(null);
   const [relatedPosts, setRelatedPosts] = useState<CommunityPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [commentsLoading, setCommentsLoading] = useState(false);
+  const [commentBody, setCommentBody] = useState('');
+  const [submittingComment, setSubmittingComment] = useState(false);
+
+  const loadComments = useCallback(async () => {
+    setCommentsLoading(true);
+    const { data } = await supabase
+      .from('community_comments')
+      .select('id, body, created_at, user_id')
+      .eq('post_id', postId)
+      .order('created_at', { ascending: true });
+    setComments((data ?? []) as Comment[]);
+    setCommentsLoading(false);
+  }, [postId]);
+
+  const handlePostComment = async () => {
+    if (!commentBody.trim() || !user || !profile) return;
+    setSubmittingComment(true);
+    const { error } = await supabase
+      .from('community_comments')
+      .insert({ post_id: postId, user_id: user.id, body: commentBody.trim() });
+    setSubmittingComment(false);
+    if (!error) {
+      setCommentBody('');
+      loadComments();
+    }
+  };
 
   const handleShare = async () => {
     const url = `${window.location.origin}/community?post=${postId}`;
@@ -60,8 +100,10 @@ export default function ThreadView({ postId }: ThreadViewProps) {
       }
     });
 
+    loadComments();
+
     return () => { cancelled = true; };
-  }, [postId]);
+  }, [postId, loadComments]);
 
   if (loading) {
     return (
@@ -164,9 +206,73 @@ export default function ThreadView({ postId }: ThreadViewProps) {
             </div>
           </article>
 
-          {/* Comments placeholder */}
-          <div className="mt-4 bg-white rounded-2xl border border-gray-100 p-6 text-center">
-            <p className="text-gray-400 text-sm">Comments coming soon</p>
+          {/* Comments */}
+          <div className="mt-4 bg-white rounded-2xl border border-gray-100 p-6">
+            <h3 className="font-bold text-gray-900 mb-4">Comments</h3>
+
+            {commentsLoading ? (
+              <div className="animate-pulse space-y-3">
+                <div className="h-4 w-3/4 bg-gray-200 rounded" />
+                <div className="h-4 w-1/2 bg-gray-200 rounded" />
+              </div>
+            ) : comments.length > 0 ? (
+              <div className="space-y-4 mb-6">
+                {comments.map((comment) => {
+                  const cNickname = comment.nickname ?? 'Anonymous';
+                  const cColor = comment.color ?? '#9CA3AF';
+                  return (
+                    <div key={comment.id} className="flex gap-3">
+                      <div
+                        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
+                        style={{ backgroundColor: cColor }}
+                      >
+                        {getInitial(cNickname)}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="text-sm font-semibold text-gray-700">{cNickname}</span>
+                          <span className="text-xs text-gray-400">{timeAgo(comment.created_at)}</span>
+                        </div>
+                        <p className="text-sm text-gray-600 leading-relaxed">{comment.body}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              <p className="text-gray-400 text-sm mb-6">No comments yet. Be the first to share your thoughts.</p>
+            )}
+
+            {user && profile ? (
+              <div className="flex gap-3 pt-4 border-t border-gray-100">
+                <div
+                  className="w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
+                  style={{ backgroundColor: profile.color }}
+                >
+                  {getInitial(profile.nickname)}
+                </div>
+                <div className="flex-1">
+                  <textarea
+                    value={commentBody}
+                    onChange={(e) => setCommentBody(e.target.value)}
+                    placeholder="Share your thoughts..."
+                    rows={2}
+                    className="w-full px-3 py-2 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder:text-gray-400 focus:ring-2 focus:ring-teal-primary/30 focus:border-teal-primary focus:outline-none transition-all resize-none"
+                  />
+                  <button
+                    onClick={handlePostComment}
+                    disabled={!commentBody.trim() || submittingComment}
+                    className="mt-2 px-4 py-2 bg-teal-primary hover:bg-teal-dark text-white text-sm font-semibold rounded-lg transition-colors disabled:opacity-40"
+                  >
+                    {submittingComment ? 'Posting...' : 'Post Comment'}
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <p className="text-gray-400 text-sm text-center pt-4 border-t border-gray-100">
+                <Link href="/auth" className="text-teal-primary hover:text-teal-dark font-semibold">Log in</Link> to comment
+              </p>
+            )}
           </div>
         </div>
 
