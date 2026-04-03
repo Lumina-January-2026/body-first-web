@@ -44,4 +44,6 @@ export interface CommunityPost {
   /** Flat author fields from the VIEW join */
   author_nickname: string | null;
   author_color: string | null;
+  /** 'team' for agent-generated posts, 'user' for human posts */
+  source?: 'team' | 'user';
 }
