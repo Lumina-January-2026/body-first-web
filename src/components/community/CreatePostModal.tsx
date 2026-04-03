@@ -72,7 +72,7 @@ export default function CreatePostModal({ open, onClose, onPostCreated }: Create
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
 
-      <div className="relative bg-white rounded-2xl max-w-lg w-full shadow-2xl animate-modal-in overflow-hidden max-h-[90vh] overflow-y-auto">
+      <div className="relative bg-white rounded-2xl max-w-lg w-full shadow-2xl animate-modal-in overflow-hidden max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10"

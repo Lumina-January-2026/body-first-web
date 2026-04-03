@@ -32,7 +32,7 @@ export default function CommunityPost({ post }: CommunityPostProps) {
   };
 
   return (
-    <article className="py-5 px-1">
+    <article className="py-5 px-1 sm:px-2">
       <div className="flex items-center flex-wrap gap-x-2 gap-y-1 text-sm text-gray-500 mb-2">
         <div
           className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white flex-shrink-0"
@@ -76,10 +76,10 @@ export default function CommunityPost({ post }: CommunityPostProps) {
         </div>
       )}
 
-      <div className="flex items-center gap-5 text-sm text-gray-400">
+      <div className="flex items-center gap-5 text-sm text-gray-400 -ml-2">
         <Link
           href={`/community?post=${post.id}`}
-          className="flex items-center gap-1.5 hover:text-gray-600 transition-colors"
+          className="flex items-center gap-1.5 hover:text-gray-600 transition-colors min-h-[44px] px-2"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
@@ -87,7 +87,7 @@ export default function CommunityPost({ post }: CommunityPostProps) {
           <span>View</span>
         </Link>
 
-        <button onClick={handleShare} className="flex items-center gap-1.5 hover:text-gray-600 transition-colors" aria-label="Share">
+        <button onClick={handleShare} className="flex items-center gap-1.5 hover:text-gray-600 transition-colors min-h-[44px] px-2" aria-label="Share">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
             <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
@@ -97,7 +97,7 @@ export default function CommunityPost({ post }: CommunityPostProps) {
 
         <a
           href={`mailto:support@bodyfirst.app?subject=${encodeURIComponent(`Report: Post ${post.id}`)}`}
-          className="flex items-center gap-1.5 hover:text-gray-600 transition-colors"
+          className="flex items-center gap-1.5 hover:text-gray-600 transition-colors min-h-[44px] px-2"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/>
