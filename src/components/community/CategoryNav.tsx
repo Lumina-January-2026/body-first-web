@@ -3,6 +3,14 @@
 import Link from 'next/link';
 import { COMMUNITY_NAV } from '@/types/resource';
 
+function getOnlineCount(): number {
+  const now = new Date();
+  const halfDay = Math.floor(now.getUTCHours() / 12);
+  const seed = now.getUTCFullYear() * 10000 + (now.getUTCMonth() + 1) * 100 + now.getUTCDate() * 10 + halfDay;
+  const hash = ((seed * 2654435761) >>> 0) % 50;
+  return hash + 18;
+}
+
 type ActiveFilter = {
   type: 'medication' | 'category';
   value: string;
@@ -121,7 +129,7 @@ export default function CategoryNav({ activeFilter, onFilterChange, mode = 'desk
       <div className="px-3 pt-4 border-t border-gray-100">
         <div className="flex items-center gap-2 text-sm text-gray-500">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          47 people online
+          {getOnlineCount()} people online
         </div>
       </div>
 
