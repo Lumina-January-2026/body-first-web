@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { CommunityPost } from '@/types/community';
 import { fetchPostById, fetchPosts } from '@/lib/community';
-import { getCategoryLabel, getCategoryEmoji, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
+import { getCategoryLabel, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
 import type { Category } from '@/types/resource';
 import { getInitial } from '@/lib/profile';
 
@@ -91,7 +91,6 @@ export default function ThreadView({ postId }: ThreadViewProps) {
 
   const nickname = post.author_nickname ?? 'Anonymous';
   const color = post.author_color ?? '#9CA3AF';
-  const emoji = getCategoryEmoji(post.category as Category);
   const categoryLabel = getCategoryLabel(post.category as Category);
 
   return (
@@ -113,7 +112,6 @@ export default function ThreadView({ postId }: ThreadViewProps) {
           <article className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8">
             {/* Meta */}
             <div className="flex items-center gap-2 text-sm text-gray-500 mb-3">
-              <span className="text-base">{emoji}</span>
               <span>{categoryLabel}</span>
               <span className="text-gray-300">&middot;</span>
               <time dateTime={post.created_at}>{timeAgo(post.created_at)}</time>

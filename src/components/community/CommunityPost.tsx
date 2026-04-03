@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import type { CommunityPost as CommunityPostType } from '@/types/community';
-import { getCategoryLabel, getCategoryEmoji, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
+import { getCategoryLabel, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
 import { getMedicationLabel } from '@/lib/utils';
 import { getInitial } from '@/lib/profile';
 import type { Category } from '@/types/resource';
@@ -14,7 +14,6 @@ interface CommunityPostProps {
 
 export default function CommunityPost({ post }: CommunityPostProps) {
   const [copied, setCopied] = useState(false);
-  const emoji = getCategoryEmoji(post.category as Category);
   const categoryLabel = getCategoryLabel(post.category as Category);
   const nickname = post.author_nickname ?? 'Anonymous';
   const color = post.author_color ?? '#9CA3AF';
@@ -48,7 +47,6 @@ export default function CommunityPost({ post }: CommunityPostProps) {
           </span>
         )}
         <span className="text-gray-300">&middot;</span>
-        <span className="text-base">{emoji}</span>
         <span>{categoryLabel}</span>
         <span className="text-gray-300">&middot;</span>
         <time dateTime={post.created_at}>{timeAgo(post.created_at)}</time>
