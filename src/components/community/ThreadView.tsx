@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import type { CommunityPost } from '@/types/community';
 import { fetchPostById, fetchPosts } from '@/lib/community';
-import { getCategoryLabel, getCategoryEmoji, timeAgo } from '@/lib/utils';
+import { getCategoryLabel, getCategoryEmoji, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
 import type { Category } from '@/types/resource';
 import { getInitial } from '@/lib/profile';
 
@@ -128,6 +128,11 @@ export default function ThreadView({ postId }: ThreadViewProps) {
             <div className="flex items-center gap-3 mb-6">
               <Avatar nickname={nickname} color={color} />
               <span className="font-semibold text-gray-900">{nickname}</span>
+              {shouldShowTeamBadge(post) && (
+                <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-teal-50 text-teal-700 border border-teal-200">
+                  Body First Team
+                </span>
+              )}
             </div>
 
             {/* Body */}
@@ -194,6 +199,11 @@ export default function ThreadView({ postId }: ThreadViewProps) {
                           {getInitial(rNickname)}
                         </div>
                         <span className="text-xs text-gray-400">{rNickname}</span>
+                        {shouldShowTeamBadge(related) && (
+                          <span className="inline-flex items-center px-1 py-0.5 rounded text-[9px] font-medium bg-teal-50 text-teal-700 border border-teal-200">
+                            Team
+                          </span>
+                        )}
                       </div>
                     </Link>
                   );

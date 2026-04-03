@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import type { CommunityPost as CommunityPostType } from '@/types/community';
-import { getCategoryLabel, getCategoryEmoji, timeAgo } from '@/lib/utils';
+import { getCategoryLabel, getCategoryEmoji, timeAgo, shouldShowTeamBadge } from '@/lib/utils';
 import { getMedicationLabel } from '@/lib/utils';
 import { getInitial } from '@/lib/profile';
 import type { Category } from '@/types/resource';
@@ -42,6 +42,11 @@ export default function CommunityPost({ post }: CommunityPostProps) {
           {getInitial(nickname)}
         </div>
         <span className="font-semibold text-gray-700">{nickname}</span>
+        {shouldShowTeamBadge(post) && (
+          <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-medium bg-teal-50 text-teal-700 border border-teal-200">
+            Body First Team
+          </span>
+        )}
         <span className="text-gray-300">&middot;</span>
         <span className="text-base">{emoji}</span>
         <span>{categoryLabel}</span>

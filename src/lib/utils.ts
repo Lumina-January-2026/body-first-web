@@ -72,3 +72,13 @@ export function getCategoryEmoji(category: Category): string {
 export function getMedicationEmoji(medication: Medication): string {
   return MEDICATION_EMOJIS[medication] || '\u{1F48A}';
 }
+
+/**
+ * Deterministic badge for team-sourced posts.
+ * Shows "Body First Team" on ~50% of team posts, matching the mobile app logic.
+ */
+export function shouldShowTeamBadge(post: { id: string; source?: string }): boolean {
+  if (post.source !== 'team') return false;
+  const suffix = post.id.replace(/-/g, '').slice(-4);
+  return parseInt(suffix, 16) % 2 === 0;
+}
